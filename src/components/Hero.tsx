@@ -1,7 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, Suspense, lazy } from 'react';
 import { Button } from '@/components/ui/button';
 import { track } from '@/lib/analytics';
-import { FluidScene } from './FluidScene';
+
+// Lazy load Three.js for code-splitting (~1MB reduction in initial bundle)
+const FluidScene = lazy(() => import('./FluidScene').then(m => ({ default: m.FluidScene })));
+
+// Fallback component for Suspense
+function FluidSceneFallback() {
+  return (
+    <div
+      className="absolute inset-0 -z-10"
+      style={{
+        background: 'linear-gradient(180deg, #0A0A0A 0%, #0F0F0F 50%, #0A0A0A 100%)',
+      }}
+    />
+  );
+}
 
 const kpis = [
   { value: '73+', label: 'Trucks', suffix: '' },
@@ -85,7 +99,9 @@ export function Hero() {
       className="min-h-[560px] sm:min-h-dvh flex flex-col items-center justify-center relative pt-20"
     >
       {/* WebGL fluid background (desktop) / static gradient (mobile) */}
-      <FluidScene />
+      <Suspense fallback={<FluidSceneFallback />}>
+        <FluidScene />
+      </Suspense>
 
       <div className="container mx-auto px-4 text-center">
         {/* Headline */}
