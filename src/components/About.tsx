@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Shield, MapPin, Truck } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const kpiCards = [
   {
@@ -105,6 +106,10 @@ function AnimatedKPI({ value, suffix, delay = 0 }: { value: string; suffix: stri
 }
 
 export function About() {
+  const [headerRef, headerVisible] = useScrollReveal<HTMLDivElement>();
+  const [kpisRef, kpisVisible] = useScrollReveal<HTMLDivElement>();
+  const [whyRef, whyVisible] = useScrollReveal<HTMLDivElement>();
+
   return (
     <section
       id="about"
@@ -112,7 +117,13 @@ export function About() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div
+          ref={headerRef}
+          className={cn(
+            'text-center mb-12 sm:mb-16 reveal',
+            headerVisible && 'visible'
+          )}
+        >
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
             Built on Integrity, Driven by Excellence
           </h2>
@@ -123,13 +134,19 @@ export function About() {
         </div>
 
         {/* KPI Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 sm:mb-20">
+        <div
+          ref={kpisRef}
+          className={cn(
+            'grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 sm:mb-20 reveal',
+            kpisVisible && 'visible'
+          )}
+        >
           {kpiCards.map((kpi, index) => (
             <div
               key={kpi.label}
               className={cn(
-                'bg-background border border-border p-6 sm:p-8',
-                'hover:border-primary/50 transition-colors duration-300'
+                'bg-background border border-border p-6 sm:p-8 card-hover',
+                `reveal-delay-${(index + 1) * 100}`
               )}
             >
               <div className="text-4xl sm:text-5xl font-heading font-bold text-primary mb-2">
@@ -146,14 +163,26 @@ export function About() {
         </div>
 
         {/* Why VPC? */}
-        <div className="max-w-4xl mx-auto">
+        <div
+          ref={whyRef}
+          className={cn(
+            'max-w-4xl mx-auto reveal',
+            whyVisible && 'visible'
+          )}
+        >
           <h3 className="text-2xl sm:text-3xl font-heading font-semibold text-foreground text-center mb-10">
             Why VPC?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {whyVpcPoints.map((point) => (
-              <div key={point.title} className="text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 border border-primary/20 mb-4">
+            {whyVpcPoints.map((point, index) => (
+              <div
+                key={point.title}
+                className={cn(
+                  'text-center',
+                  `reveal-delay-${(index + 1) * 100}`
+                )}
+              >
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 border border-primary/20 mb-4 transition-colors duration-300 hover:bg-primary/20 hover:border-primary/40">
                   <point.icon className="w-7 h-7 text-primary" />
                 </div>
                 <p className="text-lg font-medium text-foreground mb-2">

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { track } from '@/lib/analytics';
+import { FluidScene } from './FluidScene';
 
 const kpis = [
   { value: '73+', label: 'Trucks', suffix: '' },
@@ -83,8 +84,8 @@ export function Hero() {
       id="hero"
       className="min-h-[560px] sm:min-h-dvh flex flex-col items-center justify-center relative pt-20"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card -z-10" />
+      {/* WebGL fluid background (desktop) / static gradient (mobile) */}
+      <FluidScene />
 
       <div className="container mx-auto px-4 text-center">
         {/* Headline */}

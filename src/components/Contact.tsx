@@ -51,7 +51,7 @@ export function Contact() {
   const handleFirstFocus = () => {
     if (!hasStarted) {
       setHasStarted(true);
-      track('form_start', { form: 'contact' });
+      track('form_start');
     }
   };
 
@@ -65,7 +65,7 @@ export function Contact() {
     console.log('Form submission:', data);
 
     // Track success
-    track('form_submit', { form: 'contact', volume: data.volume || 'not_specified' });
+    track('form_submit', { volume_selected: data.volume || 'not_specified' });
 
     // Show success toast
     toast.success('Message sent!', {
@@ -77,7 +77,7 @@ export function Contact() {
   };
 
   const handleFieldError = (fieldName: string, error: string) => {
-    track('form_error', { field: fieldName, error });
+    track('form_error', { field_name: fieldName, error });
   };
 
   const handleWhatsAppClick = () => {

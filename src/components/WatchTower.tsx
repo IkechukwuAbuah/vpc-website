@@ -37,7 +37,7 @@ const features = [
 
 export function WatchTower() {
   const handleDemoRequest = () => {
-    track('demo_request', { source: 'watchtower_section' });
+    track('demo_request');
     // Scroll to contact form
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
