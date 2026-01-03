@@ -71,28 +71,36 @@ const fragmentShader = `
   void main() {
     vec2 uv = vUv;
 
-    // Slow, subtle fluid motion
-    float noise1 = snoise(vec3(uv * 2.0, uTime * 0.1));
-    float noise2 = snoise(vec3(uv * 3.0 + 100.0, uTime * 0.08));
-    float noise3 = snoise(vec3(uv * 1.5 + 200.0, uTime * 0.12));
+    // Fluid motion - visible flowing effect
+    float noise1 = snoise(vec3(uv * 3.0, uTime * 0.2));
+    float noise2 = snoise(vec3(uv * 5.0 + 100.0, uTime * 0.15));
+    float noise3 = snoise(vec3(uv * 2.0 + 200.0, uTime * 0.25));
 
-    float combined = (noise1 + noise2 * 0.5 + noise3 * 0.25) / 1.75;
+    float combined = (noise1 + noise2 * 0.7 + noise3 * 0.4) / 2.1;
 
-    // Stealth Carbon colors
-    vec3 bgColor = vec3(0.039, 0.039, 0.039);  // #0A0A0A
-    vec3 cardColor = vec3(0.059, 0.059, 0.059); // #0F0F0F
+    // Colors with visible contrast
+    vec3 bgColor = vec3(0.039, 0.039, 0.039);   // #0A0A0A
+    vec3 midColor = vec3(0.15, 0.14, 0.12);     // Warm dark gray
     vec3 accentColor = vec3(1.0, 0.72, 0.0);    // #FFB800
 
-    // Very subtle amber glow in the noise
-    vec3 color = mix(bgColor, cardColor, combined * 0.5 + 0.5);
+    // Visible fluid waves
+    vec3 color = mix(bgColor, midColor, combined * 0.6 + 0.5);
 
-    // Add subtle amber highlights at peaks
-    float highlight = smoothstep(0.3, 0.7, combined);
-    color = mix(color, accentColor, highlight * 0.03);
+    // Strong amber highlights at peaks (25%)
+    float highlight = smoothstep(0.1, 0.5, combined);
+    color = mix(color, accentColor, highlight * 0.25);
 
-    // Vignette effect
-    float vignette = 1.0 - smoothstep(0.3, 1.2, length(uv - 0.5) * 1.5);
-    color *= vignette * 0.2 + 0.8;
+    // Amber glow layer
+    float glow = smoothstep(0.3, 0.7, combined);
+    color += accentColor * glow * 0.1;
+
+    // Subtle radial gradient toward center
+    float centerDist = length(uv - 0.5);
+    color += accentColor * smoothstep(0.6, 0.0, centerDist) * 0.08;
+
+    // Soft vignette
+    float vignette = 1.0 - smoothstep(0.5, 1.5, centerDist * 1.2);
+    color *= vignette * 0.1 + 0.9;
 
     gl_FragColor = vec4(color, 1.0);
   }
