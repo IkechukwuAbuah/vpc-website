@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from '@/components/ui/sonner';
+import { Header } from '@/components/Header';
+import { Hero } from '@/components/Hero';
+import { Footer } from '@/components/Footer';
 import { setupScrollDepthTracking, createSectionObserver, track } from '@/lib/analytics';
 
 function App() {
@@ -26,23 +29,28 @@ function App() {
 
   return (
     <>
+      <Header />
       <main className="min-h-dvh bg-background">
-        {/* Hero Section */}
-        <section id="hero" className="min-h-[560px] sm:min-h-dvh flex items-center justify-center">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground font-['Manrope']">
-              Engineering the Future of Freight
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              VPC Logistics delivers container cargo from Nigerian ports with real-time tracking,
-              strict compliance, and on-time delivery.
-            </p>
-            <p className="mt-4 text-2xl font-semibold text-primary">
-              Certainty. Every Trip.
-            </p>
-          </div>
+        <Hero />
+
+        {/* Placeholder sections for anchor navigation */}
+        <section id="about" className="min-h-[400px] bg-card border-t border-border flex items-center justify-center">
+          <p className="text-muted-foreground">About section coming in Phase 2</p>
+        </section>
+
+        <section id="portfolio" className="min-h-[400px] bg-background border-t border-border flex items-center justify-center">
+          <p className="text-muted-foreground">Portfolio section coming in Phase 2</p>
+        </section>
+
+        <section id="watchtower" className="min-h-[400px] bg-card border-t border-border flex items-center justify-center">
+          <p className="text-muted-foreground">WatchTower section coming in Phase 2</p>
+        </section>
+
+        <section id="contact" className="min-h-[400px] bg-background border-t border-border flex items-center justify-center">
+          <p className="text-muted-foreground">Contact form coming in Phase 3</p>
         </section>
       </main>
+      <Footer />
       <Toaster />
       <Analytics />
     </>
