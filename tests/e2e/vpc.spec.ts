@@ -17,16 +17,21 @@ test.describe('VPC Website', () => {
   });
 
   test('hero section displays tagline', async ({ page }) => {
-    await expect(page.locator('text=Certainty. Every Trip.')).toBeVisible();
+    // Use more specific selector to avoid footer match
+    await expect(page.locator('#hero').getByText('Certainty. Every Trip.')).toBeVisible();
   });
 
-  // Navigation tests (will be expanded in Phase 1)
+  // Navigation tests - desktop only (mobile uses hamburger menu)
   test('anchor navigation works', async ({ page }) => {
+    // Set desktop viewport to ensure nav links are visible
+    await page.setViewportSize({ width: 1280, height: 800 });
+
     const sections = ['about', 'portfolio', 'watchtower', 'contact'];
     for (const section of sections) {
-      const link = page.locator(`a[href="#${section}"]`);
+      // Use the desktop nav links (not CTA button)
+      const link = page.locator(`header nav a[href="#${section}"]`).filter({ hasText: new RegExp(`^${section}$`, 'i') });
       if (await link.count() > 0) {
-        await link.click();
+        await link.first().click();
         const target = page.locator(`#${section}`);
         if (await target.count() > 0) {
           await expect(target).toBeInViewport();
@@ -35,7 +40,7 @@ test.describe('VPC Website', () => {
     }
   });
 
-  // Mobile menu tests (will be expanded in Phase 1)
+  // Mobile menu tests
   test('mobile menu opens and closes', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     const menuButton = page.locator('[aria-label="Menu"]');
