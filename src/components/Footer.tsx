@@ -34,7 +34,7 @@ export function Footer() {
           {/* Quick Links */}
           <div className="space-y-4">
             <h3 className="text-foreground font-semibold font-['Manrope']">Quick Links</h3>
-            <nav className="flex flex-col gap-2">
+            <nav aria-label="Footer navigation" className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -80,7 +80,7 @@ export function Footer() {
             </p>
             <Button
               asChild
-              className="bg-[#25D366] hover:bg-[#128C7E] text-white touch-target w-full md:w-auto"
+              className="bg-[#25D366] hover:bg-[#128C7E] text-[#0A0A0A] font-medium touch-target w-full md:w-auto"
             >
               <a
                 href="https://wa.me/2348012345678?text=Hello%2C%20I%27m%20interested%20in%20VPC%20Logistics%20services."

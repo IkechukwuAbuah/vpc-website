@@ -3,6 +3,10 @@ import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from '@/components/ui/sonner';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { About } from '@/components/About';
+import { TrustStrip } from '@/components/TrustStrip';
+import { Portfolio } from '@/components/Portfolio';
+import { WatchTower } from '@/components/WatchTower';
 import { Footer } from '@/components/Footer';
 import { setupScrollDepthTracking, createSectionObserver, track } from '@/lib/analytics';
 
@@ -32,21 +36,13 @@ function App() {
       <Header />
       <main className="min-h-dvh bg-background">
         <Hero />
+        <About />
+        <TrustStrip />
+        <Portfolio />
+        <WatchTower />
 
-        {/* Placeholder sections for anchor navigation */}
-        <section id="about" className="min-h-[400px] bg-card border-t border-border flex items-center justify-center">
-          <p className="text-muted-foreground">About section coming in Phase 2</p>
-        </section>
-
-        <section id="portfolio" className="min-h-[400px] bg-background border-t border-border flex items-center justify-center">
-          <p className="text-muted-foreground">Portfolio section coming in Phase 2</p>
-        </section>
-
-        <section id="watchtower" className="min-h-[400px] bg-card border-t border-border flex items-center justify-center">
-          <p className="text-muted-foreground">WatchTower section coming in Phase 2</p>
-        </section>
-
-        <section id="contact" className="min-h-[400px] bg-background border-t border-border flex items-center justify-center">
+        {/* Contact form coming in Phase 3 */}
+        <section id="contact" className="scroll-mt-20 min-h-[400px] bg-background border-t border-border flex items-center justify-center">
           <p className="text-muted-foreground">Contact form coming in Phase 3</p>
         </section>
       </main>
