@@ -7,6 +7,7 @@ import { About } from '@/components/About';
 import { TrustStrip } from '@/components/TrustStrip';
 import { Portfolio } from '@/components/Portfolio';
 import { WatchTower } from '@/components/WatchTower';
+import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { setupScrollDepthTracking, createSectionObserver, track } from '@/lib/analytics';
 
@@ -40,11 +41,7 @@ function App() {
         <TrustStrip />
         <Portfolio />
         <WatchTower />
-
-        {/* Contact form coming in Phase 3 */}
-        <section id="contact" className="scroll-mt-20 min-h-[400px] bg-background border-t border-border flex items-center justify-center">
-          <p className="text-muted-foreground">Contact form coming in Phase 3</p>
-        </section>
+        <Contact />
       </main>
       <Footer />
       <Toaster />

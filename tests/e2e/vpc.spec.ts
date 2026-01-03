@@ -64,6 +64,7 @@ test.describe('VPC Website', () => {
       await expect(page.locator('text=Company name is required')).toBeVisible();
       await expect(page.locator('text=Contact name is required')).toBeVisible();
       await expect(page.locator('text=Please enter a valid email')).toBeVisible();
+      await expect(page.locator('text=Message must be at least 10 characters')).toBeVisible();
     }
   });
 
@@ -74,8 +75,9 @@ test.describe('VPC Website', () => {
       await page.fill('[name="company"]', 'Test Corp');
       await page.fill('[name="name"]', 'John Doe');
       await page.fill('[name="email"]', 'john@test.com');
+      await page.fill('[name="message"]', 'This is a test message for the form');
       await page.click('button[type="submit"]');
-      await expect(page.locator('text=Message sent')).toBeVisible();
+      await expect(page.locator('text=Message sent!')).toBeVisible({ timeout: 10000 });
     }
   });
 
