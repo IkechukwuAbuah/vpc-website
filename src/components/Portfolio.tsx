@@ -1,30 +1,84 @@
-import { Truck } from 'lucide-react';
+import {
+  Banknote,
+  CheckCircle2,
+  FileText,
+  ShieldCheck,
+  Truck,
+  UserPlus,
+  MapPin,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const brands = [
+const steps = [
   {
-    name: 'Virgo Point Capital',
-    description: 'Flagship fleet with premium service standards',
-    trucks: 31,
-    accent: '#FFB800', // Primary amber
+    step: '01',
+    side: 'Customer',
+    icon: UserPlus,
+    title: 'Request dispatch',
+    description: 'Pickup, drop‑off, container type, timing — in one request.',
   },
   {
-    name: 'Libra Haulage',
-    description: 'Mid-tier reliability for consistent operations',
-    trucks: 26,
-    accent: '#3B82F6', // Blue
+    step: '02',
+    side: 'Customer',
+    icon: CheckCircle2,
+    title: 'Dispatch confirmed',
+    description: 'We confirm rate + ETA, then assign a driver.',
   },
   {
-    name: 'Pure Coordination',
-    description: 'Specialized operations and overflow capacity',
-    trucks: 11,
-    accent: '#10B981', // Green
+    step: '03',
+    side: 'Customer',
+    icon: Truck,
+    title: 'Truck heads to pickup',
+    description: 'Driver dispatched to port/ICD and begins the move.',
   },
   {
-    name: 'First Move Logistics',
-    description: 'Agile response for urgent deliveries',
-    trucks: 6,
-    accent: '#8B5CF6', // Purple
+    step: '04',
+    side: 'Customer',
+    icon: MapPin,
+    title: 'Track live',
+    description: 'Live status + map tracking for cargo owners, terminals, and your warehouse.',
+  },
+  {
+    step: '05',
+    side: 'Customer',
+    icon: FileText,
+    title: 'Close out with docs',
+    description: 'POD/waybill + completion confirmation — stored for audit.',
+  },
+  {
+    step: '06',
+    side: 'Operations',
+    icon: ShieldCheck,
+    title: 'Match capacity',
+    description: 'Vetted truck + driver, availability checked to prevent double‑assignment.',
+  },
+  {
+    step: '07',
+    side: 'Operations',
+    icon: FileText,
+    title: 'Confirm route + docs',
+    description: 'Dispatch record created with route, container details, and documentation plan.',
+  },
+  {
+    step: '08',
+    side: 'Operations',
+    icon: MapPin,
+    title: 'Monitor + alerts',
+    description: 'At gate, en route, delays — surfaced in WatchTower.',
+  },
+  {
+    step: '09',
+    side: 'Operations',
+    icon: Truck,
+    title: 'Assign a driver',
+    description: 'Dispatch to an available driver and truck — no double‑assignment.',
+  },
+  {
+    step: '10',
+    side: 'Operations',
+    icon: Banknote,
+    title: 'Receipt + close‑out',
+    description: 'Receipts and compliance docs issued for finance and reporting.',
   },
 ];
 
@@ -38,71 +92,79 @@ export function Portfolio() {
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-            Our Fleet Brands
+            How Dispatch Works
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Four specialized brands, one standard of excellence. Each optimized for specific
-            operational needs, all delivering VPC quality.
+            A simple operating flow for Type‑B haulage: request, dispatch, track, and close out with documentation.
           </p>
         </div>
 
-        {/* Brand Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {brands.map((brand) => (
-            <div
-              key={brand.name}
-              className={cn(
-                'group bg-card border border-border p-6',
-                'hover:-translate-y-1 transition-all duration-300',
-                'hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5'
-              )}
-              style={{
-                // Subtle accent on hover via CSS custom property
-                '--brand-accent': brand.accent,
-              } as React.CSSProperties}
-            >
-              {/* Icon */}
-              <div
-                className="w-12 h-12 flex items-center justify-center mb-4 border"
-                style={{
-                  backgroundColor: `${brand.accent}10`,
-                  borderColor: `${brand.accent}30`,
-                }}
-              >
-                <Truck
-                  className="w-6 h-6"
-                  style={{ color: brand.accent }}
-                />
-              </div>
+        {/* Flow */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+          {(['Customer', 'Operations'] as const).map((side) => (
+            <div key={side} className="surface border border-border p-6 sm:p-8 relative overflow-hidden rounded-xl">
+              <div className="absolute inset-0 bg-carbon-grid opacity-[0.25]" />
+              <div className="relative">
+                <div className="flex items-center justify-between gap-4 mb-6">
+                  <div className="text-left">
+                    <p className="text-xs tracking-widest uppercase text-muted-foreground">
+                      {side === 'Customer' ? 'Customer side' : 'Operations side'}
+                    </p>
+                    <h3 className="text-xl sm:text-2xl font-heading font-semibold text-foreground">
+                      {side === 'Customer' ? 'Create the order' : 'Run the trip'}
+                    </h3>
+                  </div>
+                  <div
+                    className={cn(
+                      'text-xs px-3 py-1 border',
+                      side === 'Customer' ? 'border-accent/30 text-accent' : 'border-primary/30 text-primary'
+                    )}
+                  >
+                    {side === 'Customer' ? '01–05' : '06–10'}
+                  </div>
+                </div>
 
-              {/* Content */}
-              <h3 className="text-lg font-heading font-semibold text-foreground mb-2">
-                {brand.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 min-h-[40px]">
-                {brand.description}
-              </p>
-
-              {/* Truck Count */}
-              <div className="flex items-center gap-2 pt-4 border-t border-border">
-                <span
-                  className="text-2xl font-heading font-bold"
-                  style={{ color: brand.accent }}
-                >
-                  {brand.trucks}
-                </span>
-                <span className="text-sm text-muted-foreground">trucks</span>
+                <div className="space-y-4">
+                  {steps
+                    .filter(s => s.side === side)
+                    .map((s) => (
+                      <div key={s.step} className="flex gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 bg-background border border-border flex items-center justify-center rounded-lg">
+                          <s.icon className={cn('w-5 h-5', side === 'Customer' ? 'text-accent' : 'text-primary')} />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="flex items-baseline gap-3">
+                            <span className="text-xs tracking-widest text-muted-foreground">
+                              {s.step}
+                            </span>
+                            <p className="font-medium text-foreground">
+                              {s.title}
+                            </p>
+                          </div>
+                          <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
+                            {s.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Total Fleet */}
+        {/* Proof callout */}
         <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-card border border-border">
-            <span className="text-muted-foreground">Total Fleet Capacity:</span>
-            <span className="text-2xl font-heading font-bold text-primary">
-              73+ Trucks
+          <div className="inline-flex flex-col sm:flex-row items-center gap-3 px-6 py-4 surface border border-border rounded-xl">
+            <span className="text-muted-foreground">
+              Built for ports, terminals, and high‑volume shippers
+            </span>
+            <span className="highway-strip h-px w-12 opacity-60 hidden sm:block" aria-hidden="true" />
+            <span className="text-sm text-foreground">
+              Want to see the dispatch board?
+              <a href="#watchtower" className="text-primary font-semibold ml-2">
+                View tracking →
+              </a>
             </span>
           </div>
         </div>

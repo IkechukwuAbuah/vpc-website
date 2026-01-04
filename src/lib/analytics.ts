@@ -4,6 +4,9 @@ import { track as vercelTrack } from '@vercel/analytics';
 type AnalyticsEvent =
   | 'section_view'
   | 'cta_click'
+  | 'dispatch_request'
+  | 'tracking_open'
+  | 'dispatch_reset'
   | 'form_start'
   | 'form_submit'
   | 'form_error'
@@ -13,6 +16,9 @@ type AnalyticsEvent =
 type AnalyticsProperties = {
   section_view: { section_id: string };
   cta_click: { cta_name: string; section: string };
+  dispatch_request: { pickup: string; destination: string; container: string; when: string };
+  tracking_open: { source: string };
+  dispatch_reset: { source: string };
   form_start: Record<string, never>;
   form_submit: { volume_selected?: string };
   form_error: { field_name: string; error: string };

@@ -9,27 +9,27 @@
 
 @layer base {
   :root {
-    /* Stealth Carbon Theme */
+    /* Dispatch Carbon (VPC) */
     --background: 0 0% 4%;           /* #0A0A0A */
     --foreground: 0 0% 98%;          /* #FAFAFA */
     --card: 0 0% 6%;                 /* #0F0F0F */
     --card-foreground: 0 0% 98%;     /* #FAFAFA */
     --popover: 0 0% 6%;              /* #0F0F0F */
     --popover-foreground: 0 0% 98%;  /* #FAFAFA */
-    --primary: 45 100% 50%;          /* #FFB800 amber */
+    --primary: 142 71% 45%;          /* Safe Green (platform action) */
     --primary-foreground: 0 0% 4%;   /* #0A0A0A */
     --secondary: 0 0% 10%;           /* #1A1A1A */
     --secondary-foreground: 0 0% 98%;/* #FAFAFA */
     --muted: 0 0% 10%;               /* #1A1A1A */
     --muted-foreground: 0 0% 63%;    /* #A1A1A1 */
-    --accent: 45 100% 50%;           /* #FFB800 amber */
+    --accent: 45 100% 50%;           /* VPC Amber (brand highlight) */
     --accent-foreground: 0 0% 4%;    /* #0A0A0A */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 10%;              /* #1A1A1A */
     --input: 0 0% 10%;               /* #1A1A1A */
-    --ring: 45 100% 50%;             /* #FFB800 amber for focus */
-    --radius: 0px;                   /* Sharp geometric corners */
+    --ring: 142 71% 45%;             /* Safe Green focus ring */
+    --radius: 12px;                  /* App-like controls, sharp layouts */
   }
 }
 
@@ -77,17 +77,45 @@
   .touch-target {
     @apply min-h-[48px] min-w-[48px];
   }
+
+  /* Elevated surfaces: subtle gradient + inset highlight (OS-like) */
+  .surface {
+    background-image: linear-gradient(
+      180deg,
+      hsl(var(--card) / 0.92) 0%,
+      hsl(var(--background) / 0.82) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 hsl(var(--foreground) / 0.06),
+      0 18px 50px -30px hsl(var(--foreground) / 0.22);
+  }
+
+  /* Brand visual language: subtle “highway strip” dividers */
+  .highway-strip {
+    background-image:
+      linear-gradient(to right, hsl(var(--border)) 35%, transparent 0%);
+    background-size: 18px 1px;
+    background-repeat: repeat-x;
+    background-position: left center;
+  }
 }
 
 /* Scroll reveal animations */
 @layer utilities {
+  /* Fail-open: content is visible without JS. */
   .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* When JS is enabled, animate into view. */
+  .js .reveal {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
 
-  .reveal.visible {
+  .js .reveal.visible {
     opacity: 1;
     transform: translateY(0);
   }
@@ -115,7 +143,43 @@
 
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px -10px rgba(255, 184, 0, 0.15);
+    box-shadow: 0 10px 30px -10px hsl(var(--primary) / 0.25);
     border-color: hsl(var(--primary) / 0.5);
+  }
+
+  /* Carbon grid for “control room” sections */
+  .bg-carbon-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.35) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  /* Route line motion (hero backdrop) */
+  @keyframes route-dash {
+    to {
+      stroke-dashoffset: -420;
+    }
+  }
+
+  .route-dash {
+    animation: route-dash 22s linear infinite;
+    stroke-dashoffset: 0;
+  }
+
+  .route-dash-slow {
+    animation-duration: 32s;
+  }
+
+  .route-dash-fast {
+    animation-duration: 16s;
+  }
+
+  /* Atmosphere: green + amber aurora wash */
+  .bg-aurora {
+    background-image:
+      radial-gradient(800px 420px at 15% -10%, hsl(var(--primary) / 0.24), transparent 70%),
+      radial-gradient(640px 360px at 85% 0%, hsl(var(--accent) / 0.16), transparent 65%),
+      radial-gradient(700px 460px at 55% 110%, hsl(var(--primary) / 0.12), transparent 60%);
   }
 }

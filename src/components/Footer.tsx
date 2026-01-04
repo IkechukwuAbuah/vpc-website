@@ -4,7 +4,7 @@ import { track } from '@/lib/analytics';
 
 const navLinks = [
   { href: '#about', label: 'About' },
-  { href: '#portfolio', label: 'Portfolio' },
+  { href: '#portfolio', label: 'How It Works' },
   { href: '#watchtower', label: 'WatchTower' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -26,11 +26,11 @@ export function Footer() {
               VPC
             </a>
             <p className="text-muted-foreground text-sm">
-              Container Haulage Across Nigeria
+              Dispatch Network for Type‑B Haulage
             </p>
-            <p className="text-primary font-semibold">Certainty. Every Trip.</p>
+            <p className="text-accent font-semibold">Certainty. Every Trip.</p>
             <p className="text-muted-foreground text-xs">
-              Part of the EFL logistics ecosystem
+              Docs-ready close‑out + live tracking
             </p>
           </div>
 
@@ -62,11 +62,11 @@ export function Footer() {
                 partnerships@vpc.com.ng
               </a>
               <a
-                href="tel:+2348012345678"
+                href="tel:+2349096673176"
                 className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
               >
                 <Phone className="h-4 w-4" />
-                +234 801 234 5678
+                +234 909 667 3176
               </a>
               <span className="text-muted-foreground flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
@@ -79,14 +79,14 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-foreground font-semibold font-['Manrope']">Get in Touch</h3>
             <p className="text-muted-foreground text-sm">
-              Response within 24 hours
+              Response within 1 hour (business hours)
             </p>
             <Button
               asChild
               className="bg-[#25D366] hover:bg-[#128C7E] text-[#0A0A0A] font-medium touch-target w-full md:w-auto"
             >
               <a
-                href="https://wa.me/2348012345678?text=Hello%2C%20I%27m%20interested%20in%20VPC%20Logistics%20services."
+                href="https://wa.me/2349096673176?text=Hello%2C%20I%27m%20interested%20in%20VPC%20Dispatch."
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}

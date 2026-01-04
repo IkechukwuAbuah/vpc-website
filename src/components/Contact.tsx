@@ -69,7 +69,7 @@ export function Contact() {
 
     // Show success toast
     toast.success('Message sent!', {
-      description: "We'll get back to you within 24 hours.",
+      description: "We'll respond within 1 hour during business hours.",
     });
 
     reset();
@@ -93,11 +93,11 @@ export function Contact() {
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-            Let's Move Your Cargo
+            Request Dispatch
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Get in touch for a partnership inquiry or request a quote.
-            We respond within 24 hours.
+            Share pickup, drop‑off, container type, and timing.
+            We respond within 1 hour during business hours.
           </p>
         </div>
 
@@ -109,7 +109,7 @@ export function Contact() {
             className="w-full bg-[#25D366] hover:bg-[#128C7E] text-[#0A0A0A] font-medium h-14 text-lg"
           >
             <a
-              href="https://wa.me/2348012345678?text=Hello%2C%20I%27m%20interested%20in%20VPC%20Logistics%20services."
+              href="https://wa.me/2349096673176?text=Hello%2C%20I%27m%20interested%20in%20VPC%20Dispatch."
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleWhatsAppClick}
@@ -127,7 +127,7 @@ export function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-card border border-border p-6 sm:p-8">
+              <div className="surface border border-border p-6 sm:p-8 rounded-xl">
                 <p className="text-foreground font-medium mb-6">
                   Or send us a message
                 </p>
@@ -229,7 +229,7 @@ export function Contact() {
                         type="tel"
                         {...register('phone')}
                         onFocus={handleFirstFocus}
-                        placeholder="+234 801 234 5678"
+                        placeholder="+234 909 667 3176"
                         autoComplete="tel"
                         inputMode="tel"
                         className="h-11 text-base bg-background border-border focus:border-primary focus:ring-primary"
@@ -323,7 +323,7 @@ export function Contact() {
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center rounded-lg">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -339,23 +339,23 @@ export function Contact() {
 
                 {/* Phone */}
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center rounded-lg">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="font-medium text-foreground mb-1">Phone</p>
                     <a
-                      href="tel:+2348012345678"
+                      href="tel:+2349096673176"
                       className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                     >
-                      +234 801 234 5678
+                      +234 909 667 3176
                     </a>
                   </div>
                 </div>
 
                 {/* Address */}
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center rounded-lg">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -368,7 +368,7 @@ export function Contact() {
 
                 {/* Hours */}
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 border border-primary/20 flex items-center justify-center rounded-lg">
                     <Clock className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -380,18 +380,18 @@ export function Contact() {
                 </div>
 
                 {/* Response Time Badge */}
-                <div className="bg-card border border-border p-4 mt-8">
+                <div className="surface border border-border p-4 mt-8 rounded-xl">
                   <div className="flex items-center gap-3">
                     <div className="relative flex h-3 w-3">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                       <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-foreground">
-                        Response within 24 hours
+                        <p className="text-sm font-medium text-foreground">
+                        Response within 1 hour
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        Usually faster during business hours
+                        During business hours (Mon–Fri, 8:00 AM – 6:00 PM WAT)
                       </p>
                     </div>
                   </div>

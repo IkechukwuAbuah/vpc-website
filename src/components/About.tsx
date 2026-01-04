@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Shield, MapPin, Truck } from 'lucide-react';
+import { ClipboardList, MapPin, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
@@ -26,19 +26,19 @@ const kpiCards = [
 
 const whyVpcPoints = [
   {
+    icon: ClipboardList,
+    title: 'Request → Dispatch',
+    description: 'Request a Type‑B move and we dispatch a vetted truck. No phone‑chasing.',
+  },
+  {
     icon: MapPin,
-    title: 'Integrated, Not Isolated',
-    description: 'Direct connection to EFL terminal systems. Your tracking starts at the gate, not when the truck leaves.',
+    title: 'Visibility for Every Stakeholder',
+    description: 'Live status + map tracking for cargo owners, terminals, and your warehouse team — updated in minutes.',
   },
   {
-    icon: Shield,
-    title: 'Partners, Not Vendors',
-    description: 'We answer our phones. We communicate proactively. When something changes, you know first.',
-  },
-  {
-    icon: Truck,
-    title: 'Capacity You Can Count On',
-    description: '73 trucks across 4 fleet brands. We rarely say no to your load.',
+    icon: ShieldCheck,
+    title: 'Payments & Docs, Closed Out',
+    description: 'Verified payments, receipts, PODs, and compliance documents ready when the job completes.',
   },
 ];
 
@@ -113,9 +113,11 @@ export function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-20 bg-card border-t border-border py-16 sm:py-24"
+      className="scroll-mt-20 bg-card border-t border-border py-16 sm:py-24 relative overflow-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-carbon-grid opacity-[0.14]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-aurora opacity-[0.28]" aria-hidden="true" />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div
           ref={headerRef}
@@ -125,12 +127,12 @@ export function About() {
           )}
         >
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-            Built for Partnerships That Last
+            A Dispatch Network Built for Ports
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            We're not just moving containers—we're building relationships. VPC operates as the haulage
-            backbone of an integrated logistics ecosystem. Our fleet connects directly to EFL's bonded
-            terminal infrastructure, giving you end-to-end visibility from port to destination.
+            VPC Dispatch is built for Nigerian ports: request a truck, get dispatch confirmation,
+            track live, and close out with documentation. One operating system for Type‑B haulage —
+            booking, live tracking, and docs-ready close‑out.
           </p>
         </div>
 
@@ -146,7 +148,7 @@ export function About() {
             <div
               key={kpi.label}
               className={cn(
-                'bg-background border border-border p-6 sm:p-8 card-hover',
+                'surface border border-border p-6 sm:p-8 card-hover rounded-xl',
                 `reveal-delay-${(index + 1) * 100}`
               )}
             >
@@ -183,7 +185,7 @@ export function About() {
                   `reveal-delay-${(index + 1) * 100}`
                 )}
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 border border-primary/20 mb-4 transition-colors duration-300 hover:bg-primary/20 hover:border-primary/40">
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 border border-primary/20 mb-4 rounded-lg transition-colors duration-300 hover:bg-primary/20 hover:border-primary/40">
                   <point.icon className="w-7 h-7 text-primary" />
                 </div>
                 <p className="text-lg font-medium text-foreground mb-2">

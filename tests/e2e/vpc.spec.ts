@@ -13,7 +13,7 @@ test.describe('VPC Website', () => {
 
   test('homepage loads correctly', async ({ page }) => {
     await expect(page).toHaveTitle(/VPC/);
-    await expect(page.locator('h1')).toContainText('Engineering the Future of Freight');
+    await expect(page.locator('h1')).toContainText('Book Type');
   });
 
   test('hero section displays tagline', async ({ page }) => {
@@ -26,13 +26,21 @@ test.describe('VPC Website', () => {
     // Set desktop viewport to ensure nav links are visible
     await page.setViewportSize({ width: 1280, height: 800 });
 
-    const sections = ['about', 'portfolio', 'watchtower', 'contact'];
+    const sections: Array<{ id: string; label: string }> = [
+      { id: 'about', label: 'About' },
+      { id: 'portfolio', label: 'How It Works' },
+      { id: 'watchtower', label: 'WatchTower' },
+      { id: 'contact', label: 'Contact' },
+    ];
+
     for (const section of sections) {
       // Use the desktop nav links (not CTA button)
-      const link = page.locator(`header nav a[href="#${section}"]`).filter({ hasText: new RegExp(`^${section}$`, 'i') });
+      const link = page
+        .locator(`header nav a[href="#${section.id}"]`)
+        .filter({ hasText: new RegExp(`^${section.label}$`, 'i') });
       if (await link.count() > 0) {
         await link.first().click();
-        const target = page.locator(`#${section}`);
+        const target = page.locator(`#${section.id}`);
         if (await target.count() > 0) {
           await expect(target).toBeInViewport();
         }

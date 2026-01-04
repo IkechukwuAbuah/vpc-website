@@ -6,7 +6,7 @@ import { track } from '@/lib/analytics';
 
 const navLinks = [
   { href: '#about', label: 'About' },
-  { href: '#portfolio', label: 'Portfolio' },
+  { href: '#portfolio', label: 'How It Works' },
   { href: '#watchtower', label: 'WatchTower' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -63,10 +63,12 @@ export function Header() {
             className="bg-primary text-primary-foreground hover:bg-primary/90 touch-target"
           >
             <a
-              href="#contact"
-              onClick={() => track('cta_click', { cta_name: 'get-quote-header', section: 'header' })}
+              href="https://wa.me/2349096673176?text=Hello%2C%20I%27m%20interested%20in%20VPC%20Dispatch."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track('cta_click', { cta_name: 'request-dispatch-whatsapp-header', section: 'header' })}
             >
-              Get a Quote
+              Request Dispatch
             </a>
           </Button>
         </div>
@@ -102,10 +104,12 @@ export function Header() {
                   className="bg-primary text-primary-foreground hover:bg-primary/90 touch-target mt-4"
                 >
                   <a
-                    href="#contact"
-                    onClick={() => track('cta_click', { cta_name: 'get-quote-mobile', section: 'header' })}
+                    href="https://wa.me/2349096673176?text=Hello%2C%20I%27m%20interested%20in%20VPC%20Dispatch."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track('cta_click', { cta_name: 'request-dispatch-whatsapp-mobile', section: 'header' })}
                   >
-                    Get a Quote
+                    Request Dispatch
                   </a>
                 </Button>
               </SheetClose>
