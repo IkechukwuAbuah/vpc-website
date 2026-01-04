@@ -26,19 +26,19 @@ const kpiCards = [
 
 const whyVpcPoints = [
   {
-    icon: Shield,
-    title: 'Strict Compliance',
-    description: 'Full regulatory adherence with proper documentation and safety protocols for every shipment.',
+    icon: MapPin,
+    title: 'Integrated, Not Isolated',
+    description: 'Direct connection to EFL terminal systems. Your tracking starts at the gate, not when the truck leaves.',
   },
   {
-    icon: MapPin,
-    title: 'Real-Time Tracking',
-    description: 'GPS-enabled fleet visibility. Know exactly where your cargo is at any moment.',
+    icon: Shield,
+    title: 'Partners, Not Vendors',
+    description: 'We answer our phones. We communicate proactively. When something changes, you know first.',
   },
   {
     icon: Truck,
-    title: 'Fleet Scale',
-    description: '73+ trucks across 4 brands. Capacity to handle your volume, reliability to deliver.',
+    title: 'Capacity You Can Count On',
+    description: '73 trucks across 4 fleet brands. We rarely say no to your load.',
   },
 ];
 
@@ -125,11 +125,12 @@ export function About() {
           )}
         >
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-            Built on Integrity, Driven by Excellence
+            Built for Partnerships That Last
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Nigeria's trusted partner for container haulage. We move cargo with precision,
-            transparency, and unwavering commitment to delivery.
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            We're not just moving containers—we're building relationships. VPC operates as the haulage
+            backbone of an integrated logistics ecosystem. Our fleet connects directly to EFL's bonded
+            terminal infrastructure, giving you end-to-end visibility from port to destination.
           </p>
         </div>
 

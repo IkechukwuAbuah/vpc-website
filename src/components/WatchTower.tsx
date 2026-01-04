@@ -5,33 +5,33 @@ import { track } from '@/lib/analytics';
 const features = [
   {
     icon: MapPin,
-    title: 'GPS Tracking',
-    description: 'Real-time location for every truck in the fleet',
+    title: 'Live Container Tracking',
+    description: 'See your container\'s exact location on a map—updated every 2 minutes',
   },
   {
     icon: Clock,
-    title: 'Predictive ETA',
-    description: 'AI-powered arrival estimates based on route conditions',
+    title: 'Accurate ETAs',
+    description: 'Plan your warehouse ops with arrival times you can actually trust',
   },
   {
     icon: Bell,
-    title: 'Proactive Alerts',
-    description: 'Instant notifications for delays, deviations, or issues',
+    title: 'Instant Alerts',
+    description: 'Get notified the moment something changes: delays, arrivals, diversions',
   },
   {
     icon: Shield,
-    title: 'Geofence Monitoring',
-    description: 'Automated zone entry/exit tracking and reporting',
+    title: 'Terminal Integration',
+    description: 'Connected to EFL systems—your tracking starts at the gate',
   },
   {
     icon: BarChart3,
-    title: 'Driver Scoring',
-    description: 'Performance metrics for safety and efficiency',
+    title: 'Driver Safety Records',
+    description: 'Know your driver\'s performance history before they touch your cargo',
   },
   {
     icon: FileCheck,
-    title: 'Compliance Dashboard',
-    description: 'Documentation status and regulatory adherence',
+    title: 'Documentation Ready',
+    description: 'All paperwork in one place—waybills, PODs, compliance records',
   },
 ];
 
@@ -61,8 +61,8 @@ export function WatchTower() {
             Know Where Your Cargo Is. Always.
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            WatchTower is VPC's proprietary fleet management system. Real-time visibility,
-            predictive insights, and complete operational control.
+            WatchTower connects directly to EFL's terminal systems, giving you visibility
+            from the moment your container enters the gate until it reaches your warehouse.
           </p>
         </div>
 
@@ -109,10 +109,8 @@ export function WatchTower() {
                 <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '0.3s' }} />
                 <div className="absolute bottom-1/4 left-1/4 w-3 h-3 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '0.7s' }} />
 
-                {/* Center label */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground/50">Preview Mode</span>
-                </div>
+                {/* Subtle overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
               </div>
 
               {/* Mock Stats Row */}

@@ -106,16 +106,16 @@ export function Hero() {
       <div className="container mx-auto px-4 text-center">
         {/* Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground font-['Manrope'] leading-tight">
-          Engineering the Future
+          Know Where Your Cargo Is.
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
-          of Freight
+          Get Trucks When You Need Them.
         </h1>
 
         {/* Subheadline */}
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          VPC Logistics delivers container cargo from Nigerian ports with real-time tracking,
-          strict compliance, and on-time delivery.
+          VPC delivers container haulage across Nigeria with real-time tracking,
+          responsive communication, and capacity you can count on. Integrated with EFL.
         </p>
 
         {/* Tagline */}
@@ -155,8 +155,8 @@ export function Hero() {
             size="lg"
             className="border-border text-foreground hover:bg-secondary touch-target w-full sm:w-auto text-lg px-8"
           >
-            <a href="#watchtower" onClick={() => handleCTAClick('request-demo')}>
-              Request Demo
+            <a href="#about" onClick={() => handleCTAClick('see-how-it-works')}>
+              See How It Works
             </a>
           </Button>
         </div>

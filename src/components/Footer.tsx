@@ -26,9 +26,12 @@ export function Footer() {
               VPC
             </a>
             <p className="text-muted-foreground text-sm">
-              Engineering the Future of Freight
+              Container Haulage Across Nigeria
             </p>
             <p className="text-primary font-semibold">Certainty. Every Trip.</p>
+            <p className="text-muted-foreground text-xs">
+              Part of the EFL logistics ecosystem
+            </p>
           </div>
 
           {/* Quick Links */}
