@@ -109,7 +109,7 @@ document.querySelectorAll('#f input,#f select').forEach(el=>el.addEventListener(
 function say(t){$('status').textContent=t;}
 $('copy').addEventListener('click',async()=>{const html=vpcSignature(data());
  try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([$('out').innerText],{type:'text/plain'})})]);say('Copied. Paste it into your email signature settings.');}
- catch(e){const r=document.createRange();r.selectNode($('out'));const s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');say('Copied. Paste it into your email signature settings.');}catch(_){say('Select the signature in the preview and copy it with Ctrl/Cmd + C.');}}});
+ catch(e){const tmp=document.createElement('div');tmp.innerHTML=html;tmp.style.cssText='position:fixed;left:-9999px;top:0;background:#fff';document.body.appendChild(tmp);const r=document.createRange();r.selectNodeContents(tmp);const s=getSelection();s.removeAllRanges();s.addRange(r);let ok=false;try{ok=document.execCommand('copy');}catch(_){}s.removeAllRanges();tmp.remove();say(ok?'Copied. Paste it into your email signature settings.':'Copying is blocked here. Use Copy HTML code instead.');}});
 $('copyhtml').addEventListener('click',async()=>{const html=vpcSignature(data());try{await navigator.clipboard.writeText(html);say('HTML code copied.');}catch(e){const t=$('ta');t.value=html;t.select();say('Press Ctrl/Cmd + C to copy the HTML code.');}});
 render();
 </script>
