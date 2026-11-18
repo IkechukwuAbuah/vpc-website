@@ -43,11 +43,11 @@ textarea{position:absolute;left:-9999px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 <div class="wrap">
-<header><div><div class="eyebrow">Virgo Point Capital · Team kit</div><h1>Signature Studio</h1></div>
+<header><div><div class="eyebrow">VirgoPoint Capital · Team kit</div><h1>Signature Studio</h1></div>
 <p class="lede">Pick your name, add your role, copy, paste into Gmail. Every signature follows the new brand: the VPC emblem, navy type, one red accent line and the “move with legacy” sign-off.</p></header>
 <div class="grid">
 <div class="panel"><form id="f" autocomplete="off">
- <div class="seg" role="radiogroup" aria-label="Company"><input type="radio" name="brand" id="b-vpc" value="vpc" checked><label for="b-vpc">Virgo Point Capital</label><input type="radio" name="brand" id="b-h" value="haulage"><label for="b-h">VirgoPoint Haulage</label></div>
+ <div class="seg" role="radiogroup" aria-label="Company"><input type="radio" name="brand" id="b-vpc" value="vpc" checked><label for="b-vpc">VirgoPoint Capital</label><input type="radio" name="brand" id="b-h" value="haulage"><label for="b-h">VirgoPoint Haulage</label></div>
  <label for="name">Full name<input id="name" placeholder="Your full name"></label>
  <label for="title">Role<input id="title" placeholder="Your role"></label>
  <label for="phone">Office or main line<input id="phone" placeholder="+234 …" inputmode="tel"></label>
@@ -66,7 +66,7 @@ textarea{position:absolute;left:-9999px}
 <div class="steps">
  <div class="panel"><h3>Gmail</h3><ol><li>Settings (gear) → See all settings.</li><li>General → Signature → Create new.</li><li>Click in the box and paste (Ctrl/Cmd + V).</li><li>Set it as default for new emails and replies. Save changes.</li></ol></div>
  <div class="panel"><h3>Outlook</h3><ol><li>Settings → Mail → Compose and reply.</li><li>New signature, give it a name, paste.</li><li>Choose it for new messages and replies. Save.</li></ol></div>
- <div class="panel"><h3>Phone (Gmail app)</h3><ol><li>The app only takes plain text.</li><li>Use: Name · Role · Virgo Point Capital · phone.</li><li>Desktop signature still applies to replies sent from the web.</li></ol></div>
+ <div class="panel"><h3>Phone (Gmail app)</h3><ol><li>The app only takes plain text.</li><li>Use: Name · Role · VirgoPoint Capital · phone.</li><li>Desktop signature still applies to replies sent from the web.</li></ol></div>
 </div>
 <textarea id="ta" aria-hidden="true" tabindex="-1"></textarea>
 </div>
@@ -74,8 +74,8 @@ textarea{position:absolute;left:-9999px}
 // Shared signature builder: email-safe table HTML, inline styles only.
 function vpcSignature(o){
   const B = o.brand==='haulage'
-    ? {ink:'#0C1931',accent:'#970F27',org:'VirgoPoint Haulage',sub:'A Member of Virgo Point Capital',logo:o.logoBase+'haulage-sig-mark@2x.png',lw:48,lh:65,line:'Built on trust.'}
-    : {ink:'#0C1931',accent:'#E40028',org:'Virgo Point Capital',sub:'',logo:o.logoBase+'vpc-sig-emblem@2x.png',lw:48,lh:65,line:'move with legacy…'};
+    ? {ink:'#0C1931',accent:'#970F27',org:'VirgoPoint Haulage',sub:'A Member of VirgoPoint Capital',logo:o.logoBase+'haulage-sig-mark@2x.png',lw:48,lh:65,line:'Built on trust.'}
+    : {ink:'#0C1931',accent:'#E40028',org:'VirgoPoint Capital',sub:'',logo:o.logoBase+'vpc-sig-emblem@2x.png',lw:48,lh:65,line:'move with legacy…'};
   const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const tel=s=>esc(s);
   const sep='<span style="color:#B5BCCB;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>';
