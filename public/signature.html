@@ -80,11 +80,13 @@ function vpcSignature(o){
   const B = o.brand==='haulage'
     ? {ink:'#0C1931',accent:'#970F27',org:'VirgoPoint Haulage',sub:'a VPC company',logo:o.logoBase+'haulage-sig-mark@2x.png',lw:48,lh:65}
     : {ink:'#0C1931',accent:'#E40028',org:'VirgoPoint Capital',sub:'',logo:o.logoBase+'vpc-sig-emblem@2x.png',lw:48,lh:65};
-  const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  const url=s=>{s=String(s||'').trim();if(!s)return '';if(!/^https?:\/\//i.test(s)){if(/^[a-z][a-z0-9+.-]*:/i.test(s))return '';s='https://'+s.replace(/^\/+/,'');}return s;};
+  const li=url(o.linkedin);
   const tel=s=>esc(s);
   const sep='<span style="color:#B5BCCB;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>';
   const contact=[o.phone&&('<span style="color:'+B.accent+';font-weight:bold;">T</span>&nbsp;'+tel(o.phone)), o.mobile&&('<span style="color:'+B.accent+';font-weight:bold;">M</span>&nbsp;'+tel(o.mobile))].filter(Boolean).join(sep);
-  const web=[o.email&&('<a href="mailto:'+esc(o.email)+'" style="color:#0C1931;text-decoration:none;">'+esc(o.email)+'</a>'),'<a href="https://vpc.com.ng" style="color:#0C1931;text-decoration:none;">vpc.com.ng</a>', o.linkedin&&('<a href="'+esc(o.linkedin)+'" style="color:#0C1931;text-decoration:none;">LinkedIn</a>')].filter(Boolean).join(sep);
+  const web=[o.email&&('<a href="mailto:'+esc(o.email)+'" style="color:#0C1931;text-decoration:none;">'+esc(o.email)+'</a>'),'<a href="https://vpc.com.ng" style="color:#0C1931;text-decoration:none;">vpc.com.ng</a>', li&&('<a href="'+esc(li)+'" style="color:#0C1931;text-decoration:none;">LinkedIn</a>')].filter(Boolean).join(sep);
   return '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#0C1931;">'
   +'<tr><td valign="top" style="padding:2px 18px 0 0;border-right:2px solid '+B.accent+';">'
   +'<img src="'+B.logo+'" width="'+B.lw+'" height="'+B.lh+'" alt="'+(o.brand==='haulage'?'VPH':'VPC')+'" style="display:block;border:0;font-family:Arial,sans-serif;font-size:11px;color:#0C1931;width:'+B.lw+'px;height:'+B.lh+'px;">'
@@ -108,9 +110,10 @@ const EMBED={'vpc-sig-emblem@2x.png':'data:image/png;base64,iVBORw0KGgoAAAANSUhE
 function render(){let h=vpcSignature(data());for(const k in EMBED){h=h.split(LOGO_BASE+k).join(EMBED[k]);}$('out').innerHTML=h;}
 document.querySelectorAll('#f input,#f select').forEach(el=>el.addEventListener('input',render));
 function say(t){$('status').textContent=t;}
-$('copy').addEventListener('click',async()=>{const html=vpcSignature(data());
+function missing(){const m=[['name','name'],['title','role'],['email','email']].filter(([id])=>!$(id).value.trim());if(!m.length)return false;const w=m.map(x=>x[1]);say('Add your '+(w.length>1?w.slice(0,-1).join(', ')+' and '+w[w.length-1]:w[0])+' first.');$(m[0][0]).focus();return true;}
+$('copy').addEventListener('click',async()=>{if(missing())return;const html=vpcSignature(data());
  try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([$('out').innerText],{type:'text/plain'})})]);say('Copied. Paste it into your email signature settings.');}
  catch(e){const tmp=document.createElement('div');tmp.innerHTML=html;tmp.style.cssText='position:fixed;left:-9999px;top:0;background:#fff';document.body.appendChild(tmp);const r=document.createRange();r.selectNodeContents(tmp);const s=getSelection();s.removeAllRanges();s.addRange(r);let ok=false;try{ok=document.execCommand('copy');}catch(_){}s.removeAllRanges();tmp.remove();say(ok?'Copied. Paste it into your email signature settings.':'Copying is blocked here. Use Copy HTML code instead.');}});
-$('copyhtml').addEventListener('click',async()=>{const html=vpcSignature(data());try{await navigator.clipboard.writeText(html);say('HTML code copied.');}catch(e){const t=$('ta');t.value=html;t.select();say('Press Ctrl/Cmd + C to copy the HTML code.');}});
+$('copyhtml').addEventListener('click',async()=>{if(missing())return;const html=vpcSignature(data());try{await navigator.clipboard.writeText(html);say('HTML code copied.');}catch(e){const t=$('ta');t.value=html;t.select();say('Press Ctrl/Cmd + C to copy the HTML code.');}});
 render();
 </script>
