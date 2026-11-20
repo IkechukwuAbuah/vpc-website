@@ -23,10 +23,11 @@ h1{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(
 form{display:grid;gap:14px}
 label{display:grid;gap:6px;font-size:13px;font-weight:600}
 label span{font-weight:400;color:var(--muted)}
+input,select,button,.panel{box-sizing:border-box}
 input,select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
 input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .seg{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;margin:0}
 .seg label{display:block;text-align:center;padding:10px;cursor:pointer;font-weight:600}
 .seg input:checked+label{background:var(--ink);color:var(--bg)}
 .mail{background:#FFFFFF;border-radius:12px;border:1px solid var(--line);overflow:hidden}
@@ -47,7 +48,7 @@ textarea{position:absolute;left:-9999px}
 </style>
 <div class="wrap">
 <header><div><div class="eyebrow">VirgoPoint Capital · Team kit</div><h1>Signature Studio</h1></div>
-<p class="lede">Pick your name, add your role, copy, paste into Gmail. Every signature follows the new brand: the VPC emblem, navy type and one red accent line. Nothing else.</p></header>
+<p class="lede">Type your name and role, copy, then paste into Gmail or Outlook. Every signature follows the brand: your company's emblem, navy type and one red rule. Nothing else.</p></header>
 <div class="grid">
 <div class="panel"><form id="f" autocomplete="off">
  <div class="seg" role="radiogroup" aria-label="Company"><input type="radio" name="brand" id="b-vpc" value="vpc" checked><label for="b-vpc">VirgoPoint Capital</label><input type="radio" name="brand" id="b-h" value="haulage"><label for="b-h">VirgoPoint Haulage</label></div>
@@ -69,7 +70,7 @@ textarea{position:absolute;left:-9999px}
 <div class="steps">
  <div class="panel"><h3>Gmail</h3><ol><li>Settings (gear) → See all settings.</li><li>General → Signature → Create new.</li><li>Click in the box and paste (Ctrl/Cmd + V).</li><li>Set it as default for new emails and replies. Save changes.</li></ol></div>
  <div class="panel"><h3>Outlook</h3><ol><li>Settings → Mail → Compose and reply.</li><li>New signature, give it a name, paste.</li><li>Choose it for new messages and replies. Save.</li></ol></div>
- <div class="panel"><h3>Phone (Gmail app)</h3><ol><li>The app only takes plain text.</li><li>Use: Name · Role · VirgoPoint Capital · phone.</li><li>Desktop signature still applies to replies sent from the web.</li></ol></div>
+ <div class="panel"><h3>Phone (Gmail app)</h3><ol><li>The app only takes plain text.</li><li>Use: Name · Role · your company · phone.</li><li>Desktop signature still applies to replies sent from the web.</li></ol></div>
 </div>
 <textarea id="ta" aria-hidden="true" tabindex="-1"></textarea>
 </div>
