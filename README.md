@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# VirgoPoint Haulage website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The public site for VirgoPoint Haulage, a VirgoPoint Capital company. It is a static, multi-page site: plain HTML, CSS and a little JavaScript, with no framework and no build step.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+site/                 everything that is served
+  index.html          Home: "Port to door."
+  services-*.html     Terminal collection, Road haulage
+  carriers.html       Register as a transporter
+  track.html          Track a shipment (hands off to WhatsApp until WatchTower tracking is live)
+  watchtower.html     WatchTower (customer product, early access)
+  proof-of-delivery.html
+  quote.html          Get a quote (sends the request to WhatsApp)
+  about.html, privacy.html, terms.html
+  signature.html      Email Signature Studio (internal tool)
+  img/, trk/, brand/  images, videos and logos
+tests/e2e/            Playwright smoke tests
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Run it
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+pnpm dev               # http://localhost:5173
+pnpm test:e2e          # set PW_CHROMIUM=/path/to/chrome to use a Chromium you already have
 ```
+
+## How the pages are made
+
+The pages are generated from the design drafts (concept C3, "Follow one trip") in the project files, `vpc/website/concept-c/pages-r1/source/`. Run the steps in this order: `build_quote2.py`, `site2.py`, `home_opts.py`, `carriers_opts.py`, then `finalize.py`. The last step writes the production pages to `pages-r1/prod/`, which are copied into `site/` here.
+
+## What is not live yet
+
+- **Forms** open WhatsApp with the details written out. There is no server-side form handling yet.
+- **Track** does not look anything up. It hands the number to WhatsApp until WatchTower serves live terminal and GPS data.
+- **Sign in** to WatchTower is not built. The page asks customers to request early access.
+- **Privacy and Terms** are drafts for legal review, and the pages say so.
+- **Pictures** are the current scene renders. Final assets will be swapped in later.
+
+## Deploy
+
+`vercel.json` serves `site/` as-is, with clean URLs. The live vpc.com.ng is still the older page, deployed by hand to the Vercel project `vpc-ng`. Merging this branch does not change the live site.
