@@ -470,7 +470,7 @@ function blPanel(lap){const c=S.m.chk;
   <p class="note" style="margin:0">Pick up, size and number filled in from your BL.</p></div>`}
 const fsz=b=>b>1048576?(b/1048576).toFixed(1)+' MB':Math.max(1,Math.round(b/1024))+' KB';
 const fileCard=()=>{const f=S.m.tdo,ext=(f.name.split('.').pop()||'').slice(0,4).toUpperCase();
- return `<div class="file"><span class="ft">${ext}</span><div style="min-width:0"><b>${f.name}</b><small>${fsz(f.size)}</small></div><button type="button" class="ddx" data-tdox="1" aria-label="Remove TDO" title="Remove TDO">×</button></div>`};
+ return `<div class="file"><span class="ft">${vxE(ext)}</span><div style="min-width:0"><b>${vxE(f.name)}</b><small>${fsz(f.size)}</small></div><button type="button" class="ddx" data-tdox="1" aria-label="Remove TDO" title="Remove TDO">×</button></div>`};
 /* laptop: a drop zone (drag a file or browse). phone: Snap opens the camera, Upload opens files */
 const tdoBox=lap=>`<div class="fl"><span>TDO</span>${S.m.tdo?fileCard()
  :lap?`<label class="drop" data-drop="1"><span class="doc" aria-hidden="true"><i></i><i></i><i></i></span><span class="dt"><b>Add your TDO</b><small>Drop a PDF or photo here</small></span><span class="b soft sm">Browse</span><input type="file" accept="image/*,application/pdf" data-tdo="1" hidden></label>`
@@ -496,7 +496,7 @@ const mWho=lap=>lap?`<div class="row2">${mf('Your name','name','Name')}${mf('Com
 const MAIL='watch-tower@vpc.com.ng';
 const DL='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M12 4V16M7 11L12 16L17 11M4 15V20H20V15"/></svg>';
 function mSum(){const s=S.m,v=x=>x&&x!=='Other'?vxE(x):'—';
- const rows=[['Pick up at',(s.pins&&s.pins.port)?v(s.port)+' (pinned)':v(s.port)],...(s.kind==='gen'?[['Cargo','General cargo'],['What is it',v(s.what)],['Weight',s.wt?vxE(s.wt)+' t':'—']]:[['Size',v(s.size)],['How many',s.n]]),['Deliver to',(s.pins&&s.pins.dest)?(s.dest?s.dest+' (pinned)':'Pinned on map'):v(s.dest)],['When to load',v(whenTxt(s.when))],['BL number',v(s.bl)],['TDO',s.tdo?vxE(s.tdo.name):'—'],['Name',v(s.name)],['Company',v(s.co)],['WhatsApp',v(s.wa)],['Email',v(s.em)]];
+ const rows=[['Pick up at',(s.pins&&s.pins.port)?v(s.port)+' (pinned)':v(s.port)],...(s.kind==='gen'?[['Cargo','General cargo'],['What is it',v(s.what)],['Weight',s.wt?vxE(s.wt)+' t':'—']]:[['Size',v(s.size)],['How many',s.n]]),['Deliver to',(s.pins&&s.pins.dest)?(s.dest?s.dest+' (pinned)':'Pinned on map'):v(s.dest)],['When to load',v(whenTxt(s.when))],['BL number',v(s.bl)],['TDO',s.tdo&&atPort()?vxE(s.tdo.name):'—'],['Name',v(s.name)],['Company',v(s.co)],['WhatsApp',v(s.wa)],['Email',v(s.em)]];
  return `<div class="bls"><div class="gh">Your request</div><dl class="sum">${rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('')}</dl></div>`}
 const mReach=()=>`<div class="reach">
  <div class="rr"><span class="lm">WhatsApp</span><b class="num">${WA}</b><button type="button" class="b soft sm" data-mshare="wa" title="Opens WhatsApp with your request written out">Send</button></div>
@@ -582,15 +582,17 @@ function txt(){var s=S.m,v=function(x){return x&&x!=='Other'?x:''};var L=['Quote
 function add(k,x){if(x!==''&&x!=null)L.push(k+': '+x)}
 add('Pick up at',v(s.port));if(s.kind==='gen'){add('Cargo','General cargo');add('What is it',v(s.what));add('Weight',s.wt?s.wt+' t':'')}else{add('Size',v(s.size));add('How many',s.n)}
 add('Deliver to',v(s.dest));add('When to load',typeof whenTxt==='function'?v(whenTxt(s.when)):v(s.when));add('BL number',v(s.bl));
-if(s.tdo)L.push('TDO: I will send it in this chat');add('Name',v(s.name));add('Company',v(s.co));add('WhatsApp',v(s.wa));add('Email',v(s.em));return L.join('\n')}
+if(s.tdo&&(typeof atPort!=='function'||atPort()))L.push('TDO: I will send it in this chat');add('Name',v(s.name));add('Company',v(s.co));add('WhatsApp',v(s.wa));add('Email',v(s.em));return L.join('\n')}
 window.mSent=function(lap){var top='<h1 class="h">Finish in <em>WhatsApp.</em></h1><p class="sub">We opened WhatsApp with your request written out. Press send there and we reply with a price.</p>';
 var edit='<button type="button" class="bk" data-medit="1" style="justify-self:start">‹ Edit request</button>';
 if(lap)return '<div style="padding:48px 64px 64px"><div class="mgrid" style="margin-top:0"><div style="display:grid;gap:28px;align-content:start;padding-top:8px"><div>'+top+'</div><div><div class="gh" style="margin-bottom:4px">WhatsApp did not open?</div>'+mReach()+'</div>'+edit+'</div>'+mSum()+'</div></div>';
 return '<div style="padding:28px 16px 32px;display:grid;gap:24px"><div>'+top+'</div>'+mSum()+'<div><div class="gh" style="margin-bottom:4px">WhatsApp did not open?</div>'+mReach()+'</div>'+edit+'</div>'};
 window.blPanel=function(){return ''};
 var STEP0=['port','size','what','dest','when'];function vxMissing(list){var s=S.m;return list.filter(function(f){if(f==='size'&&s.kind==='gen')return false;if(f==='what'&&s.kind!=='gen')return false;var x=s[f];if(f==='when'&&typeof whenTxt==='function'&&x)x=whenTxt(x);x=String(x==null?'':x).trim();if(!x||x==='Other'||x==='Pick a date')return true;if(f==='wa')return x.replace(/\D/g,'').length<7;return false})}
-function vxCheck(list){var miss=vxMissing(list);if(!miss.length)return true;var st=miss.some(function(f){return STEP0.indexOf(f)>-1})?0:1;if(S.m.step!==st){S.m.step=st;render('m')}var first=null;miss.forEach(function(f){document.querySelectorAll('.in[data-o="m"] [data-f="'+f+'"]').forEach(function(el){el.classList.add('vx-miss');el.setAttribute('aria-invalid','true');if(!first&&el.offsetParent)first=el})});if(first){first.focus();first.scrollIntoView({block:'center'})}return false}
-document.addEventListener('input',function(e){if(e.target.classList&&e.target.classList.contains('vx-miss')){e.target.classList.remove('vx-miss');e.target.removeAttribute('aria-invalid')}},true);
+var VXM=[];function vxMark(focus){var first=null;VXM.forEach(function(f){var els=document.querySelectorAll('.in[data-o="m"] [data-f="'+f+'"]');if(!els.length&&f==='when')els=document.querySelectorAll('.in[data-o="m"] [data-calopen]');els.forEach(function(el){el.classList.add('vx-miss');el.setAttribute('aria-invalid','true');if(!first&&el.offsetParent)first=el})});if(focus&&first){first.focus();first.scrollIntoView({block:'center'})}}
+var vxR=render;render=function(o){vxR(o);if(o==='m'&&VXM.length){VXM=vxMissing(VXM);vxMark(false)}};
+function vxCheck(list){var miss=vxMissing(list);VXM=miss;if(!miss.length)return true;var st=miss.some(function(f){return STEP0.indexOf(f)>-1})?0:1;if(S.m.step!==st){S.m.step=st;render('m')}vxMark(true);return false}
+document.addEventListener('input',function(e){if(e.target.classList&&e.target.classList.contains('vx-miss')){e.target.classList.remove('vx-miss');e.target.removeAttribute('aria-invalid');var f=e.target.getAttribute('data-f');VXM=VXM.filter(function(x){return x!==f})}},true);
 document.addEventListener('click',function(e){var t=e.target.closest('[data-msend],[data-mnext],[data-mshare],[data-blchk]');if(!t)return;
 if(t.dataset.mnext&&S.m.step===0){if(!vxCheck(STEP0)){e.stopImmediatePropagation();e.preventDefault()}return}
 if(t.dataset.blchk){e.stopImmediatePropagation();e.preventDefault();return}
@@ -603,6 +605,6 @@ function sel(){var s=b.previousElementSibling;if(!s)return;var r=document.create
 try{navigator.clipboard.writeText(v).then(ok,sel)}catch(e){sel()}})});
 window.vxWA=function(text){var u='https://wa.me/'+WAN+'?text='+encodeURIComponent(text);var w=window.open(u,'_blank');if(w){try{w.opener=null}catch(e){}}else{location.href=u;}};
 document.querySelectorAll('form[data-wa]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;
-var lines=[f.getAttribute('data-wa')];f.querySelectorAll('label').forEach(function(l){var i=l.querySelector('input:not([type=file]),select,textarea');var s=l.querySelector('span');if(i&&i.value.trim())lines.push((s?s.textContent:i.name).trim()+': '+i.value.trim());});
+var lines=[f.getAttribute('data-wa')];f.querySelectorAll('label').forEach(function(l){var i=l.querySelector('input:not([type=file]),select,textarea');var s=l.querySelector('span'),k=s?s.textContent:[].slice.call(l.childNodes).filter(function(n){return n.nodeType===3}).map(function(n){return n.textContent}).join(' ');if(i&&i.value.trim())lines.push((k.trim()||i.name)+': '+i.value.trim());});
 var chips=[].slice.call(f.querySelectorAll('.chip[aria-pressed="true"]')).map(function(c){return c.textContent});if(chips.length)lines.push('Containers: '+chips.join(', '));
 vxWA(lines.join('\n'));var o=f.querySelector('.ok2');if(o){o.hidden=false;}});});})();</script></body></html>

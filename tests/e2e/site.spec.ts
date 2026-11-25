@@ -114,3 +114,45 @@ test('quote will not send until the required fields are filled', async ({ page }
   await page.locator('[data-medit]:visible').first().click();
   await expect(page.locator('input[data-f=co]:visible')).toHaveValue('Acme "Logistics" Ltd');
 });
+
+test('early-access request uses readable field names', async ({ page }) => {
+  await page.goto('/watchtower.html');
+  const opened = await captureWA(page);
+  const f = page.locator('form[data-wa]');
+  await f.locator('input[name=n]').fill('Ade');
+  await f.locator('input[name=c]').fill('Acme');
+  await f.locator('input[name=e]').fill('ade@acme.com');
+  await f.locator('button[type=submit]').click();
+  await expect.poll(() => opened.length).toBe(1);
+  const text = decodeURIComponent(opened[0]);
+  expect(text).toContain('Name: Ade');
+  expect(text).toContain('Work email: ade@acme.com');
+});
+
+test('quote flags an unpicked date and keeps flags after a re-render', async ({ page }) => {
+  await page.goto('/quote.html');
+  const opened = await captureWA(page);
+  await page.locator('select[data-f=when]:visible').selectOption('Pick a date');
+  if (await page.evaluate('S.m.calOpen')) { await page.locator('[data-calopen]:visible').first().click(); }
+  await page.locator('input[data-f=dest]:visible').fill('Ikeja');
+  const next = page.locator('[data-mnext]:visible, [data-msend]:visible').first();
+  await next.click();
+  await expect(page.locator('[data-calopen]:visible').first()).toHaveClass(/vx-miss/);
+  await page.locator('select[data-f=size]:visible').selectOption('20 ft');
+  await expect(page.locator('[data-calopen]:visible').first()).toHaveClass(/vx-miss/);
+  expect(opened.length).toBe(0);
+});
+
+test('a TDO file name is shown as text, not markup', async ({ page }) => {
+  await page.goto('/quote.html');
+  await page.locator('input[data-tdo]').first().setInputFiles({ name: 'a<b>c.pdf', mimeType: 'application/pdf', buffer: Buffer.from('%PDF') });
+  await expect(page.locator('.file b').first()).toHaveText('a<b>c.pdf');
+});
+
+test('clearing the track box hides the old result', async ({ page }) => {
+  await page.goto('/track.html?q=CMAU4829139');
+  await expect(page.locator('#res')).toBeVisible();
+  await page.fill('#q1', '');
+  await page.locator('#tf button[type=submit], #tf button').first().click();
+  await expect(page.locator('#res')).toBeHidden();
+});
