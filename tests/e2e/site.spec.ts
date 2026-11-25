@@ -82,3 +82,35 @@ test('quote form has no map pin that the request cannot carry', async ({ page })
   await page.goto('/quote.html');
   await expect(page.locator('[data-mapopen]:visible')).toHaveCount(0);
 });
+
+async function captureWA(page: import('@playwright/test').Page) {
+  const opened: string[] = [];
+  await page.exposeFunction('captureOpen', (u: string) => opened.push(u));
+  await page.evaluate(() => { window.open = ((u: string) => { (window as any).captureOpen(u); return {} as Window; }) as typeof window.open; });
+  return opened;
+}
+
+test('quote will not send until the required fields are filled', async ({ page }) => {
+  await page.goto('/quote.html');
+  const opened = await captureWA(page);
+  const next = page.locator('[data-mnext]:visible, [data-msend]:visible').first();
+  await next.click();
+  await expect(page.locator('input[data-f=dest]:visible')).toHaveClass(/vx-miss/);
+  await expect(page.locator('input[data-f=dest]:visible')).toBeFocused();
+  await page.locator('input[data-f=dest]:visible').fill('Ikeja');
+  await next.click();
+  expect(opened.length).toBe(0);
+  await page.locator('[data-msend]:visible').first().click();
+  await expect(page.locator('input[data-f=name]:visible')).toHaveClass(/vx-miss/);
+  expect(opened.length).toBe(0);
+  await page.locator('input[data-f=name]:visible').fill('Ade');
+  await page.locator('input[data-f=wa]:visible').fill('+234 800 000 0000');
+  await page.locator('input[data-f=co]:visible').fill('Acme "Logistics" Ltd');
+  await page.locator('[data-msend]:visible').first().click();
+  await expect.poll(() => opened.length).toBe(1);
+  const text = decodeURIComponent(opened[0]);
+  expect(text).toContain('Deliver to: Ikeja');
+  expect(text).toContain('Company: Acme "Logistics" Ltd');
+  await page.locator('[data-medit]:visible').first().click();
+  await expect(page.locator('input[data-f=co]:visible')).toHaveValue('Acme "Logistics" Ltd');
+});

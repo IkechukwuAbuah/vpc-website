@@ -299,7 +299,7 @@ select.slot{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right
 @media (max-width:899px){.qreal .qw{padding-block:8px 56px}}
 </style>
 
-<style>
+<script>window.vxE=function(x){return String(x==null?"":x).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")};</script><style>
 .vx-w{max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));box-sizing:border-box}
 .vx-k{font:500 12px/16px 'DM Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#5F6B85;margin:0}
 .vx-ar{width:18px;height:18px;flex:none}
@@ -409,8 +409,8 @@ function msgText(){const s=S.d;return `Hello VirgoPoint Haulage,\nplease quote $
 function D(m){const s=S.d,lap=m==='lap';
  const form=`<div class="grp"><div class="fl"><span>Pick up at</span>${chips('d','port',PORTS,s.port)}</div>
   <div style="display:flex;gap:18px;flex-wrap:wrap"><div class="fl"><span>Size</span>${chips('d','size',['20 ft','40 ft'],s.size)}</div><div class="fl"><span>How many</span>${stepper('d',s.n)}</div></div>
-  <div class="row2"><label class="fl"><span>Deliver to</span><input class="in2" data-o="d" data-f="dest" value="${s.dest}"></label><label class="fl"><span>Ready</span><input class="in2" data-o="d" data-f="when" value="${s.when}"></label></div>
-  <div class="row2"><label class="fl"><span>Your name</span><input class="in2" data-o="d" data-f="name" placeholder="Name" value="${s.name}"></label><label class="fl"><span>Company</span><input class="in2" data-o="d" data-f="co" placeholder="Company" value="${s.co}"></label></div></div>`;
+  <div class="row2"><label class="fl"><span>Deliver to</span><input class="in2" data-o="d" data-f="dest" value="${vxE(s.dest)}"></label><label class="fl"><span>Ready</span><input class="in2" data-o="d" data-f="when" value="${vxE(s.when)}"></label></div>
+  <div class="row2"><label class="fl"><span>Your name</span><input class="in2" data-o="d" data-f="name" placeholder="Name" value="${vxE(s.name)}"></label><label class="fl"><span>Company</span><input class="in2" data-o="d" data-f="co" placeholder="Company" value="${vxE(s.co)}"></label></div></div>`;
  const prev=`<div><div class="msgh"><span class="lm">Your message</span><span class="num">${WA}</span></div><div class="msg" data-msg>${msgText()}</div>
   <div style="display:grid;grid-template-columns:${lap?'1fr 1fr':'1fr'};gap:10px;margin-top:14px"><span class="b pri">Send on WhatsApp</span><span class="b soft">Send by email</span></div>
   <p class="note" style="margin:10px 0 0">Opens WhatsApp or your email with the message ready. You press send.</p></div>`;
@@ -427,11 +427,11 @@ function mslant(W,cur,L){const MST=L||MSTD;const g=4,sw=(W-g)/2,sk=5,y0=20,y1=28
  MST.forEach((n,i)=>{const x=i*(sw+g),f=i<cur?'#0C1931':i===cur?'#2D3BE4':'#E4E8F0';
   o+=`<polygon points="${x+sk},${y0} ${x+sw},${y0} ${x+sw-sk},${y1} ${x},${y1}" fill="${f}"/><text x="${x}" y="12" font-family="Manrope" font-weight="600" font-size="12" fill="${i<=cur?'#0C1931':'#5F6B85'}">${n}</text>`});
  return `<svg class="sl" viewBox="0 0 ${W} 30" width="${W}" height="30" role="img" aria-label="Step ${cur+1} of 2, ${MST[cur]}">${o}</svg>`}
-const mf=(l,f,ph,type)=>`<label class="fl"><span>${l}${typeof REQ!=='undefined'&&REQ.has(f)?STAR:''}</span><input class="in2" data-o="m" data-f="${f}" ${type?`type="${type}"`:''} placeholder="${ph}" value="${S.m[f]}"></label>`;
+const mf=(l,f,ph,type)=>`<label class="fl"><span>${l}${typeof REQ!=='undefined'&&REQ.has(f)?STAR:''}</span><input class="in2" data-o="m" data-f="${f}" ${type?`type="${type}"`:''} placeholder="${ph}" value="${vxE(S.m[f])}"></label>`;
 /* dropdown with Other: picking Other shows a short text box in its place */
 const fb=f=>(S.m.fromBL||[]).includes(f)?'<i class="fbl">From BL</i>':'';
 const dd=(l,f,list,w)=>{const v=S.m[f];if(f==='when'&&(v==='Pick a date'||String(v).startsWith('date:')))return calField(l);const oth=!list.includes(v);
- return `<label class="fl"${w?` style="min-width:${w}px"`:''}><span>${l}${REQ.has(f)?STAR:''}${fb(f)}</span>${oth?`<div class="ddo"><input class="in2" data-o="m" data-f="${f}" placeholder="Tell us" value="${v==='Other'?'':v}" data-oth="1">${f==='port'?`<button type="button" class="ddx" data-mapopen="port" aria-label="Pick on map" title="Pick on map">${PIN}</button>`:''}<button type="button" class="ddx" data-ddreset="${f}" aria-label="Back to the list">×</button></div>`
+ return `<label class="fl"${w?` style="min-width:${w}px"`:''}><span>${l}${REQ.has(f)?STAR:''}${fb(f)}</span>${oth?`<div class="ddo"><input class="in2" data-o="m" data-f="${f}" placeholder="Tell us" value="${vxE(v==='Other'?'':v)}" data-oth="1">${f==='port'?`<button type="button" class="ddx" data-mapopen="port" aria-label="Pick on map" title="Pick on map">${PIN}</button>`:''}<button type="button" class="ddx" data-ddreset="${f}" aria-label="Back to the list">×</button></div>`
  :`<div class="dd"><select class="in2" data-o="m" data-f="${f}">${list.concat('Other').map(x=>`<option${x===v?' selected':''}>${x}</option>`).join('')}</select></div>`}</label>`};
 /* Ready: "Pick a date" turns the field into a date button with a month calendar under it (no past days) */
 const CALI='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M4 6H20V20H4ZM4 10H20M8 3V7M16 3V7"/></svg>';
@@ -460,7 +460,7 @@ const dstr=d=>{const x=new Date();x.setDate(x.getDate()+d);return x.toLocaleDate
 const BLX=()=>({line:'CMA CGM',arr:dstr(-4),ctrs:[
  {no:'CMAU 482193 0',sz:'40 ft HC',at:'Apapa, yard B4',st:'Released',ok:1},
  {no:'CMAU 517026 4',sz:'40 ft HC',at:'Apapa, exam bay',st:'Held: customs exam',ok:0}]});
-const blRow=()=>`<div class="fl"><span>BL number</span><div class="blin"><input class="in2" data-o="m" data-f="bl" placeholder="From your bill of lading" value="${S.m.bl}"><button type="button" class="b soft blc" data-blchk="1"${S.m.chk==='busy'?' disabled':''}>${S.m.chk==='busy'?'Checking':'Check'}</button></div></div>`;
+const blRow=()=>`<div class="fl"><span>BL number</span><div class="blin"><input class="in2" data-o="m" data-f="bl" placeholder="From your bill of lading" value="${vxE(S.m.bl)}"><button type="button" class="b soft blc" data-blchk="1"${S.m.chk==='busy'?' disabled':''}>${S.m.chk==='busy'?'Checking':'Check'}</button></div></div>`;
 function blPanel(lap){const c=S.m.chk;
  if(c!=='ok')return lap?`<div class="bls"><div class="gh">Your BL</div><div class="ghost"><i style="width:55%"></i>${[0,1].map(()=>`<div class="blr"><div style="display:grid;gap:6px;flex:1"><i style="width:48%"></i><i style="width:70%;height:8px"></i></div><span class="gp"></span></div>`).join('')}</div><p class="note" style="margin:0">${c==='busy'?'Checking your BL':'Check your BL number to see each container here: size, where it is in the yard, and if it is released or held. We fill in the form from it.'}</p></div>`:'';
  const x=BLX();
@@ -477,7 +477,7 @@ const tdoBox=lap=>`<div class="fl"><span>TDO</span>${S.m.tdo?fileCard()
  :`<div class="row2"><label class="b soft ico">${ICN.cam}Take photo<input type="file" accept="image/*" capture="environment" data-tdo="1" hidden></label><label class="b soft ico">${ICN.up}Choose file<input type="file" accept="image/*,application/pdf" data-tdo="1" hidden></label></div>`}</div>`;
 const PIN='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M12 21C12 21 5 14.5 5 9.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
 const MPIN=(x,y)=>`<svg class="mpin" style="left:${x}%;top:${y}%" width="24" height="30" viewBox="0 0 24 30" aria-hidden="true"><path d="M12 29C12 29 2 18.5 2 11A10 10 0 0 1 22 11C22 18.5 12 29 12 29Z" fill="#0C1931" stroke="#fff" stroke-width="2"/><circle cx="12" cy="11" r="3.5" fill="#fff"/></svg>`;
-const mfPin=(l,f,ph)=>`<label class="fl"><span>${l}${REQ.has(f)?STAR:''}</span><div class="blin"><input class="in2" data-o="m" data-f="${f}" placeholder="${ph}" value="${S.m[f]}" style="padding-right:48px"><button type="button" class="b soft blc pinb" data-mapopen="${f}" aria-label="Pick on map" title="Pick on map">${PIN}</button></div></label>`;
+const mfPin=(l,f,ph)=>`<label class="fl"><span>${l}${REQ.has(f)?STAR:''}</span><div class="blin"><input class="in2" data-o="m" data-f="${f}" placeholder="${ph}" value="${vxE(S.m[f])}" style="padding-right:48px"><button type="button" class="b soft blc pinb" data-mapopen="${f}" aria-label="Pick on map" title="Pick on map">${PIN}</button></div></label>`;
 function mapPanel(f){const P=S.m.pins||{},open=S.m.mapOpen===f,pt=open?S.m.mapTmp:P[f];
  if(!open&&!pt)return '';
  const nm=f==='port'?'pick up':'delivery';
@@ -495,8 +495,8 @@ const mWho=lap=>lap?`<div class="row2">${mf('Your name','name','Name')}${mf('Com
 /* sent page: reference, the request as sent, download, and WhatsApp / email with the request written out */
 const MAIL='watch-tower@vpc.com.ng';
 const DL='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M12 4V16M7 11L12 16L17 11M4 15V20H20V15"/></svg>';
-function mSum(){const s=S.m,v=x=>x&&x!=='Other'?x:'—';
- const rows=[['Pick up at',(s.pins&&s.pins.port)?v(s.port)+' (pinned)':v(s.port)],...(s.kind==='gen'?[['Cargo','General cargo'],['What is it',v(s.what)],['Weight',s.wt?s.wt+' t':'—']]:[['Size',v(s.size)],['How many',s.n]]),['Deliver to',(s.pins&&s.pins.dest)?(s.dest?s.dest+' (pinned)':'Pinned on map'):v(s.dest)],['When to load',v(whenTxt(s.when))],['BL number',v(s.bl)],['TDO',s.tdo?s.tdo.name:'—'],['Name',v(s.name)],['Company',v(s.co)],['WhatsApp',v(s.wa)],['Email',v(s.em)]];
+function mSum(){const s=S.m,v=x=>x&&x!=='Other'?vxE(x):'—';
+ const rows=[['Pick up at',(s.pins&&s.pins.port)?v(s.port)+' (pinned)':v(s.port)],...(s.kind==='gen'?[['Cargo','General cargo'],['What is it',v(s.what)],['Weight',s.wt?vxE(s.wt)+' t':'—']]:[['Size',v(s.size)],['How many',s.n]]),['Deliver to',(s.pins&&s.pins.dest)?(s.dest?s.dest+' (pinned)':'Pinned on map'):v(s.dest)],['When to load',v(whenTxt(s.when))],['BL number',v(s.bl)],['TDO',s.tdo?vxE(s.tdo.name):'—'],['Name',v(s.name)],['Company',v(s.co)],['WhatsApp',v(s.wa)],['Email',v(s.em)]];
  return `<div class="bls"><div class="gh">Your request</div><dl class="sum">${rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('')}</dl></div>`}
 const mReach=()=>`<div class="reach">
  <div class="rr"><span class="lm">WhatsApp</span><b class="num">${WA}</b><button type="button" class="b soft sm" data-mshare="wa" title="Opens WhatsApp with your request written out">Send</button></div>
@@ -588,12 +588,16 @@ var edit='<button type="button" class="bk" data-medit="1" style="justify-self:st
 if(lap)return '<div style="padding:48px 64px 64px"><div class="mgrid" style="margin-top:0"><div style="display:grid;gap:28px;align-content:start;padding-top:8px"><div>'+top+'</div><div><div class="gh" style="margin-bottom:4px">WhatsApp did not open?</div>'+mReach()+'</div>'+edit+'</div>'+mSum()+'</div></div>';
 return '<div style="padding:28px 16px 32px;display:grid;gap:24px"><div>'+top+'</div>'+mSum()+'<div><div class="gh" style="margin-bottom:4px">WhatsApp did not open?</div>'+mReach()+'</div>'+edit+'</div>'};
 window.blPanel=function(){return ''};
-document.addEventListener('click',function(e){var t=e.target.closest('[data-msend],[data-mshare],[data-blchk]');if(!t)return;
+var STEP0=['port','size','what','dest','when'];function vxMissing(list){var s=S.m;return list.filter(function(f){if(f==='size'&&s.kind==='gen')return false;if(f==='what'&&s.kind!=='gen')return false;var x=s[f];if(f==='when'&&typeof whenTxt==='function'&&x)x=whenTxt(x);x=String(x==null?'':x).trim();if(!x||x==='Other'||x==='Pick a date')return true;if(f==='wa')return x.replace(/\D/g,'').length<7;return false})}
+function vxCheck(list){var miss=vxMissing(list);if(!miss.length)return true;var st=miss.some(function(f){return STEP0.indexOf(f)>-1})?0:1;if(S.m.step!==st){S.m.step=st;render('m')}var first=null;miss.forEach(function(f){document.querySelectorAll('.in[data-o="m"] [data-f="'+f+'"]').forEach(function(el){el.classList.add('vx-miss');el.setAttribute('aria-invalid','true');if(!first&&el.offsetParent)first=el})});if(first){first.focus();first.scrollIntoView({block:'center'})}return false}
+document.addEventListener('input',function(e){if(e.target.classList&&e.target.classList.contains('vx-miss')){e.target.classList.remove('vx-miss');e.target.removeAttribute('aria-invalid')}},true);
+document.addEventListener('click',function(e){var t=e.target.closest('[data-msend],[data-mnext],[data-mshare],[data-blchk]');if(!t)return;
+if(t.dataset.mnext&&S.m.step===0){if(!vxCheck(STEP0)){e.stopImmediatePropagation();e.preventDefault()}return}
 if(t.dataset.blchk){e.stopImmediatePropagation();e.preventDefault();return}
-if(t.dataset.msend){vxWA(txt());setTimeout(function(){scrollTo(0,0)},0);return}
+if(t.dataset.msend){if(!vxCheck(['port','size','what','dest','when','name','wa'])){e.stopImmediatePropagation();e.preventDefault();return}vxWA(txt());setTimeout(function(){scrollTo(0,0)},0);return}
 if(t.dataset.mshare==='wa'){e.stopImmediatePropagation();vxWA(txt());return}
 if(t.dataset.mshare==='em'){e.stopImmediatePropagation();location.href='mailto:watch-tower@vpc.com.ng?subject='+encodeURIComponent('Quote request')+'&body='+encodeURIComponent(txt());}},true);
-var st=document.createElement('style');st.textContent='[data-blchk],[data-mdl],[data-mapopen]{display:none!important}.blin .in2{padding-right:14px!important}';document.head.appendChild(st);})();</script><script>(function(){var WAN="2349096673176";
+var st=document.createElement('style');st.textContent='.vx-miss{box-shadow:inset 0 0 0 2px #E40028!important}[data-blchk],[data-mdl],[data-mapopen]{display:none!important}.blin .in2{padding-right:14px!important}';document.head.appendChild(st);})();</script><script>(function(){var WAN="2349096673176";
 document.querySelectorAll('.vx-cpy').forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-c');function ok(){b.classList.add('ok');setTimeout(function(){b.classList.remove('ok')},1200)}
 function sel(){var s=b.previousElementSibling;if(!s)return;var r=document.createRange();r.selectNodeContents(s);var w=getSelection();w.removeAllRanges();w.addRange(r);}
 try{navigator.clipboard.writeText(v).then(ok,sel)}catch(e){sel()}})});
