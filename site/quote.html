@@ -581,7 +581,7 @@ document.addEventListener('input',e=>{const f=e.target.dataset&&e.target.dataset
 function txt(){var s=S.m,v=function(x){return x&&x!=='Other'?x:''};var L=['Quote request'];
 function add(k,x){if(x!==''&&x!=null)L.push(k+': '+x)}
 add('Pick up at',v(s.port));if(s.kind==='gen'){add('Cargo','General cargo');add('What is it',v(s.what));add('Weight',s.wt?s.wt+' t':'')}else{add('Size',v(s.size));add('How many',s.n)}
-add('Deliver to',v(s.dest)||((s.pins&&s.pins.dest)?'Pinned on map':''));add('When to load',typeof whenTxt==='function'?v(whenTxt(s.when)):v(s.when));add('BL number',v(s.bl));
+add('Deliver to',v(s.dest));add('When to load',typeof whenTxt==='function'?v(whenTxt(s.when)):v(s.when));add('BL number',v(s.bl));
 if(s.tdo)L.push('TDO: I will send it in this chat');add('Name',v(s.name));add('Company',v(s.co));add('WhatsApp',v(s.wa));add('Email',v(s.em));return L.join('\n')}
 window.mSent=function(lap){var top='<h1 class="h">Finish in <em>WhatsApp.</em></h1><p class="sub">We opened WhatsApp with your request written out. Press send there and we reply with a price.</p>';
 var edit='<button type="button" class="bk" data-medit="1" style="justify-self:start">‹ Edit request</button>';
@@ -593,11 +593,11 @@ if(t.dataset.blchk){e.stopImmediatePropagation();e.preventDefault();return}
 if(t.dataset.msend){vxWA(txt());setTimeout(function(){scrollTo(0,0)},0);return}
 if(t.dataset.mshare==='wa'){e.stopImmediatePropagation();vxWA(txt());return}
 if(t.dataset.mshare==='em'){e.stopImmediatePropagation();location.href='mailto:watch-tower@vpc.com.ng?subject='+encodeURIComponent('Quote request')+'&body='+encodeURIComponent(txt());}},true);
-var st=document.createElement('style');st.textContent='[data-blchk],[data-mdl]{display:none!important}';document.head.appendChild(st);})();</script><script>(function(){var WAN="2349096673176";
+var st=document.createElement('style');st.textContent='[data-blchk],[data-mdl],[data-mapopen]{display:none!important}.blin .in2{padding-right:14px!important}';document.head.appendChild(st);})();</script><script>(function(){var WAN="2349096673176";
 document.querySelectorAll('.vx-cpy').forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-c');function ok(){b.classList.add('ok');setTimeout(function(){b.classList.remove('ok')},1200)}
 function sel(){var s=b.previousElementSibling;if(!s)return;var r=document.createRange();r.selectNodeContents(s);var w=getSelection();w.removeAllRanges();w.addRange(r);}
 try{navigator.clipboard.writeText(v).then(ok,sel)}catch(e){sel()}})});
-window.vxWA=function(text){var u='https://wa.me/'+WAN+'?text='+encodeURIComponent(text);var w=window.open(u,'_blank','noopener');if(!w)location.href=u;};
+window.vxWA=function(text){var u='https://wa.me/'+WAN+'?text='+encodeURIComponent(text);var w=window.open(u,'_blank');if(w){try{w.opener=null}catch(e){}}else{location.href=u;}};
 document.querySelectorAll('form[data-wa]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;
 var lines=[f.getAttribute('data-wa')];f.querySelectorAll('label').forEach(function(l){var i=l.querySelector('input:not([type=file]),select,textarea');var s=l.querySelector('span');if(i&&i.value.trim())lines.push((s?s.textContent:i.name).trim()+': '+i.value.trim());});
 var chips=[].slice.call(f.querySelectorAll('.chip[aria-pressed="true"]')).map(function(c){return c.textContent});if(chips.length)lines.push('Containers: '+chips.join(', '));

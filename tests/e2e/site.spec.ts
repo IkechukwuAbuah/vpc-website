@@ -62,3 +62,23 @@ test('Carriers is not listed as a service', async ({ page }) => {
   await expect(page.locator('header a', { hasText: /^Carriers$/ })).toHaveCount(0);
   await expect(page.locator('.vx-sc h3')).toHaveText(['Terminal collection', 'Road haulage']);
 });
+
+test('WhatsApp opens in a new tab and the form page stays put', async ({ page, context }) => {
+  await context.route('https://wa.me/**', (route) => route.fulfill({ status: 200, body: 'ok' }));
+  await page.goto('/carriers.html');
+  await page.fill('input[name=co]', 'Acme Haulage');
+  await page.fill('input[name=n]', 'Ade');
+  await page.fill('input[name=wa]', '+2348000000000');
+  await page.fill('input[name=t]', '4');
+  const popup = context.waitForEvent('page');
+  await page.click('#register button[type=submit]');
+  expect((await popup).url()).toContain('wa.me/2349096673176');
+  await page.waitForTimeout(300);
+  expect(page.url()).toContain('/carriers');
+  await expect(page.locator('#register .ok2')).toBeVisible();
+});
+
+test('quote form has no map pin that the request cannot carry', async ({ page }) => {
+  await page.goto('/quote.html');
+  await expect(page.locator('[data-mapopen]:visible')).toHaveCount(0);
+});
