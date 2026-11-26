@@ -1,0 +1,610 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Get a quote · VirgoPoint Haulage</title><meta name="description" content="Get a price for container haulage from the Lagos ports to your site. Start with your BL."><link rel="icon" href="img/haulage-emblem-navy.svg" type="image/svg+xml">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--page:#f3f6fb;--surface:#fff;--ice:#f7f8fb;--ink:#0c1931;--mut:#33425e;--sub:#5f6b85;--line:#e7eaf0;--line2:#d5dae3;--navy:#0c1931;--lav:#c6caf4;--ind:#2d3be4;--soft:#e4e8f0;--red:#E40028;color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--page);color:var(--ink);font:15px/24px Manrope,"Helvetica Neue",Arial,sans-serif;margin:0}
+.wrap{max-width:1320px;margin:0 auto;padding-block:48px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.lm{font:500 12px/16px "DM Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--sub)}
+h1{font:400 44px/48px Fraunces,Georgia,serif;margin:12px 0 16px;text-wrap:balance}
+h1 em{font-weight:300}
+.lead{font-size:18px;line-height:28px;color:var(--mut);max-width:720px;margin:0}
+.facts{margin:24px 0 0;padding:0;list-style:none;border-top:2px solid var(--ink);max-width:980px}
+.facts li{padding:10px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:170px 1fr;gap:12px;font-size:14px;line-height:21px;color:var(--mut)}
+.facts li b{color:var(--ink);font-weight:600}
+@media (max-width:760px){.facts li{grid-template-columns:1fr;gap:2px}h1{font-size:32px;line-height:36px}}
+.opt{margin-top:72px;padding-top:20px;border-top:2px solid var(--ink)}
+.oh{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.oh .k{font:500 13px/1 "DM Mono",monospace;background:var(--ink);color:#fff;padding:5px 8px}
+.oh h2{font:400 30px/36px Fraunces,Georgia,serif;margin:0}
+.od{max-width:760px;color:var(--mut);margin:10px 0 0}
+.od b{color:var(--ink)}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,330px);gap:32px;align-items:start;margin-top:28px}
+@media (max-width:900px){.stage{grid-template-columns:1fr}.stage .ph{max-width:360px;margin:0 auto;width:100%}}
+.fit{position:relative;width:100%;overflow:hidden}.fit>.in{position:absolute;left:0;top:0;transform-origin:0 0}
+.cap{margin-top:10px;text-align:center}
+.foot{margin-top:72px;font-size:13px;line-height:20px;color:var(--sub);max-width:760px}
+
+/* ---- device frames ---- */
+.ui{color:var(--ink);font-family:Manrope,"Helvetica Neue",Arial,sans-serif}
+.lap{width:1200px;border-radius:14px;background:#0c1931;padding:10px 10px 0}
+.lapscr{width:1180px;min-height:760px;background:var(--page);border-radius:6px 6px 0 0;overflow:hidden;position:relative}
+.phone{width:390px;border-radius:52px;background:#0c1931;padding:10px}
+.screen{width:370px;border-radius:43px;overflow:hidden;position:relative;background:var(--page)}
+.sbar{height:50px;display:flex;justify-content:space-between;align-items:center;padding:6px 32px 0;font:600 15px Manrope}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:118px;height:34px;border-radius:20px;background:#000}
+/* site nav (DS WebsitePatterns: 64 px, logo, 3 links, Log in, one red cut button) */
+.snav{height:64px;display:flex;align-items:center;gap:28px;padding:0 40px;border-bottom:1px solid var(--line)}
+.snav img{height:36px;display:block}
+.snav .lk{display:flex;gap:26px;margin-left:auto;font:500 14px Manrope;color:var(--ink);align-items:center}
+.snav .lk i{width:1px;height:18px;background:var(--line2)}
+.phone .snav{height:60px;padding:0 16px;gap:8px}
+.phone .snav img{height:34px}
+.phone .snav .sp{margin-left:auto}
+.mb{width:40px;height:40px;background:var(--soft);display:grid;place-items:center;clip-path:polygon(11px 0,100% 0,100% calc(100% - 11px),calc(100% - 11px) 100%,0 100%,0 11px)}
+/* DS cut buttons: TL + BR cut at the V/P slant */
+.b{--h:44px;--cy:calc(var(--h)*.27);--cx:calc(var(--cy)*.718);height:var(--h);padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1 Manrope;white-space:nowrap;border:0;cursor:pointer;clip-path:polygon(var(--cx) 0,100% 0,100% calc(100% - var(--cy)),calc(100% - var(--cx)) 100%,0 100%,0 var(--cy))}
+.b.red{background:var(--red);color:#fff;--h:40px}
+.b.pri{background:var(--navy);color:#fff}
+.b.lav{background:var(--lav);color:var(--ink)}
+.b.soft{background:var(--soft);color:var(--ink)}
+.b.sm{--h:36px;font-size:14px;padding:0 14px}
+.b.wide{width:100%}
+/* page type */
+.h{font:700 44px/48px Manrope;letter-spacing:-.02em;margin:0}
+.phone .h{font-size:34px;line-height:38px}
+.sub{font-size:17px;line-height:26px;color:var(--mut);margin:12px 0 0}
+.phone .sub{font-size:15px;line-height:23px}
+/* fields */
+.fl{display:block}
+.fl>span{display:block;font:500 11px/14px "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:6px}
+.in2{height:44px;width:100%;background:#fff;box-shadow:inset 0 0 0 1px var(--line2);border:0;padding:0 12px;font:500 15px Manrope;color:var(--ink);display:flex;align-items:center;outline:none}
+.in2:focus{box-shadow:inset 0 0 0 2px var(--ink)}
+.in2.ph{color:#8f9ab0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{height:40px;padding:0 14px;background:#fff;box-shadow:inset 0 0 0 1px var(--line2);font:600 14px Manrope;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:0;color:var(--ink)}
+.chip.on{background:var(--ink);color:#fff;box-shadow:none}
+.step{display:inline-grid;grid-template-columns:40px 48px 40px;height:44px;box-shadow:inset 0 0 0 1px var(--line2);background:#fff}
+.step button{border:0;background:none;font:500 20px/1 Manrope;cursor:pointer;color:var(--ink)}
+.step b{display:grid;place-items:center;font:500 15px "DM Mono",monospace}
+.grp{background:#fff;padding:24px;display:grid;gap:18px}
+.phone .grp{padding:18px;gap:16px}
+.gh{font:500 11px/14px "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.note{font-size:13px;line-height:20px;color:var(--sub)}
+.done{background:#fff;padding:22px;display:none}
+.done.on{display:block}
+.done b{font:700 20px/26px Manrope;display:block}
+/* B: slant progress */
+.sl{display:block;width:100%}
+.ql{font:700 28px/34px Manrope;letter-spacing:-.01em;margin:0}
+.phone .ql{font-size:24px;line-height:30px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:#fff;box-shadow:inset 0 0 0 1px var(--line2);padding:14px;text-align:left;border:0;cursor:pointer;font:600 16px Manrope;color:var(--ink);min-height:72px;display:flex;flex-direction:column;justify-content:space-between}
+.tile small{font:500 11px "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--sub)}
+.tile.on{background:var(--ink);color:#fff;box-shadow:none}.tile.on small{color:#b5bccb}
+.navrow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.bk{background:none;border:0;font:600 14px Manrope;color:var(--sub);cursor:pointer;padding:0}
+/* C: one sentence */
+.sen{font:600 30px/52px Manrope;letter-spacing:-.01em;margin:0;color:var(--ink)}
+.phone .sen{font-size:22px;line-height:44px}
+.slot{display:inline-block;min-width:2ch;padding:0 6px;margin:0 2px;border:0;border-bottom:2px solid var(--ind);background:#fff;color:var(--ind);font:inherit;line-height:1.25;outline:none;cursor:text}
+.slot:focus{background:var(--lav);color:var(--ink)}
+select.slot{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:6px}
+.dd{position:relative}.dd select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:36px}
+.dd::after{content:"";position:absolute;right:14px;top:50%;width:7px;height:7px;border-right:1.75px solid var(--ink);border-bottom:1.75px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.ddo{display:grid;grid-template-columns:1fr 44px}.ddx{border:0;background:var(--soft);font:500 18px/1 Manrope;cursor:pointer;color:var(--ink)}
+.m3{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+.alt{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;color:var(--sub)}
+.fl>span .optl{font-style:normal;color:#8f9ab0}
+.up{gap:10px;cursor:pointer;min-width:0}.up b{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.up svg{flex:none}
+/* K 25 Nov: phone mock = iPhone 15 screen (390 x 844 pt); grows if content is longer, never crops */
+.phone .screen{min-height:824px}
+.mgrid{display:grid;grid-template-columns:1fr 400px;gap:24px;margin-top:32px;align-items:start}
+.blrow{display:grid;grid-template-columns:1fr auto;gap:8px}.blrow .b{--h:44px;font-size:14px;padding:0 16px}
+.bls{background:#fff;padding:20px;display:grid;gap:12px;box-shadow:inset 0 0 0 1px var(--line)}
+.phone .bls{padding:16px}
+.blh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.ex{font:500 10px/14px "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#8f9ab0}
+.blm{font-size:14px;color:var(--sub)}
+.blr{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--line)}
+.blr b{display:block;font:500 14px/20px "DM Mono",monospace;color:var(--ink)}.blr small{display:block;font-size:13px;line-height:18px;color:var(--sub)}
+.st{flex:none;font-size:12px;font-weight:600;line-height:16px;padding:4px 8px;background:var(--soft);color:var(--ink)}
+.st.hold{background:var(--ink);color:#fff}
+.drop{display:grid;justify-items:center;gap:4px;padding:28px 16px;border:1.5px dashed var(--line2);background:var(--page);cursor:pointer;text-align:center;color:var(--ink)}
+.drop b{font-weight:600;font-size:15px;margin-top:6px}.drop small{font-size:13px;color:var(--sub)}
+.drop.on,.drop:hover{border-color:var(--ink)}
+.file{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:12px;background:#fff;box-shadow:inset 0 0 0 1px var(--line2);height:56px;padding-left:6px}
+.file .ft{height:44px;display:grid;place-items:center;background:var(--soft);font:500 11px/1 "DM Mono",monospace;letter-spacing:.06em;color:var(--ink)}
+.file b{display:block;font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.file small{font-size:12px;color:var(--sub)}
+.file .ddx{height:56px}
+.b.ico{gap:8px;cursor:pointer}
+.sum{display:grid;grid-template-columns:auto 1fr;gap:10px 20px;margin:0;font-size:14px;line-height:20px}
+.sum dt{color:var(--sub)}.sum dd{margin:0;color:var(--ink);font-weight:500;min-width:0;overflow-wrap:anywhere}
+.reach{display:grid}.rr{display:grid;grid-template-columns:84px 1fr auto;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.rr b{font:500 14px/20px "DM Mono",monospace;color:var(--ink);min-width:0;overflow-wrap:anywhere}
+.phone .rr{grid-template-columns:1fr auto}.phone .rr .lm{grid-column:1/-1;margin-bottom:-8px}
+.drop{display:flex;align-items:center;gap:10px;height:56px;padding:0 16px;justify-items:start;text-align:left}
+.drop b{margin:0;font-size:14px;font-weight:600}.drop small{font-size:13px}
+.ghost{display:grid;gap:12px}.ghost i{display:block;height:10px;background:var(--soft)}
+.ghost .gp{flex:none;width:72px;height:24px;box-shadow:inset 0 0 0 1px var(--line2)}
+.fl>span .req{display:inline-block;margin-left:4px;vertical-align:1px}
+.blin{position:relative}.blin .in2{padding-right:104px}
+.b.blc{--h:32px;position:absolute;right:6px;top:6px;font-size:13px;padding:0 14px}
+.calf{position:relative}
+.calb{gap:10px;cursor:pointer;text-align:left}.calb svg{flex:none}
+.cal{position:absolute;right:0;top:calc(100% + 6px);width:288px;background:#fff;box-shadow:inset 0 0 0 1px var(--line2);padding:12px;z-index:5}
+.calh{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.calh b{font:600 14px Manrope;color:var(--ink)}
+.calh button{width:32px;height:32px;border:0;background:var(--soft);color:var(--ink);cursor:pointer;display:grid;place-items:center}.calh button:disabled{opacity:.35;cursor:default}
+.calg{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+.calg span{font:500 10px/24px "DM Mono",monospace;color:var(--sub)}
+.calg button{height:34px;border:0;background:none;font:500 13px Manrope;color:var(--ink);cursor:pointer}
+.calg button:hover{background:var(--soft)}.calg button:disabled{color:#c3c9d6;cursor:default;background:none}
+.calg button.td{box-shadow:inset 0 0 0 1px var(--line2)}.calg button.on{background:var(--ink);color:#fff;box-shadow:none}
+.m3{grid-template-columns:1fr 124px auto}.row2.ps{grid-template-columns:1fr 116px}
+.fbl{display:inline-block;margin-left:8px;font:500 9px/14px "DM Mono",monospace;letter-spacing:.06em;color:var(--ink);background:var(--soft);padding:0 5px;vertical-align:1px}
+.b.blc.pinb{width:32px;padding:0}
+.ddo:has(.ddx+.ddx){grid-template-columns:1fr 40px 40px}.ddo .ddx svg{vertical-align:middle}
+.mapp{display:grid;gap:0;box-shadow:inset 0 0 0 1px var(--line2);background:#fff}
+.mapi{position:relative;height:180px;background:url(img/map-lagos.jpg) center/cover;overflow:hidden}
+.mapi.live{cursor:crosshair}
+.mpin{position:absolute;transform:translate(-50%,-100%);pointer-events:none}
+.mapbar{display:flex;align-items:center;gap:8px;padding:8px 8px 8px 12px}.mapbar .note{flex:1;margin:0;font-size:13px}
+.drop{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;height:auto;padding:12px 12px 12px 14px;background:#fff;border:1.5px dashed var(--line2);text-align:left;justify-items:stretch}
+.drop .doc{position:relative;width:30px;height:38px;background:var(--soft);clip-path:polygon(0 0,70% 0,100% 24%,100% 100%,0 100%);display:grid;align-content:end;gap:4px;padding:0 6px 7px}
+.drop .doc i{display:block;height:2px;background:#b4bccc}.drop .doc i:last-child{width:60%}
+.drop .dt{display:grid;gap:2px}.drop .dt b{font-size:14px;font-weight:600;margin:0}.drop .dt small{font-size:13px;color:var(--sub)}
+.drop.on{border-color:var(--ink);background:var(--page)}.drop:hover{border-color:var(--ink)}
+
+/* ===== DS layer for the variants (tokens + Buttons + Website patterns + Cut-corner frame) ===== */
+.ds{--surface-ice:#f7f8fb;--ink-muted:#33425e;--ink-subtle:#5f6b85;--hair:#e7eaf0;--g-bg:#fff;--g-ink:#0c1931;--g-line:#d5dae3;--g-brand:#0c1931;--g-onbrand:#fff;--g-soft:#eef0f5;--g-softh:#e2e6ee;--g-ring:#2d3be4;--g-ok:#e2f5ea;--g-okt:#146b33;--g-late:#fde7ea;--g-latet:#b0001c}
+.ds.va .screen,.ds.va .lapscr{background:var(--surface-ice)}
+.ds.vb .screen,.ds.vb .lapscr{background:#fff}
+/* buttons: DS Buttons card (fill layer, double focus ring, 40 default / 32 sm / 48 lg) */
+.ds .b{--h:40px;--fs:15px;--gut:18px;--cy:calc(var(--h)*.27);--cx:calc(var(--cy)*.718);--clip:polygon(var(--cx) 0,100% 0,100% calc(100% - var(--cy)),calc(100% - var(--cx)) 100%,0 100%,0 var(--cy));
+ position:relative;isolation:isolate;border:0;background:none!important;clip-path:none;height:var(--h);padding:0 var(--gut);font:600 var(--fs)/1 Manrope,sans-serif;color:var(--fg,var(--g-ink));transition:transform .15s ease}
+.ds .b .f{position:absolute;inset:0;z-index:-1;clip-path:var(--clip);background:var(--bg,transparent);transition:background-color .15s ease}
+.ds .b::before,.ds .b::after{content:"";position:absolute;pointer-events:none}
+.ds .b::before{inset:-3px;z-index:-2;clip-path:polygon(calc(var(--cx) + 1.1px) 0,100% 0,100% calc(100% - var(--cy) - 1.5px),calc(100% - var(--cx) - 1.1px) 100%,0 100%,0 calc(var(--cy) + 1.5px))}
+.ds .b::after{inset:-5px;z-index:-3;clip-path:polygon(calc(var(--cx) + 1.8px) 0,100% 0,100% calc(100% - var(--cy) - 2.5px),calc(100% - var(--cx) - 1.8px) 100%,0 100%,0 calc(var(--cy) + 2.5px))}
+.ds .b:focus{outline:none}.ds .b:focus-visible::before{background:var(--g-bg)}.ds .b:focus-visible::after{background:var(--g-ring)}
+.ds .b:active{transform:scale(.97)}
+.ds .b.sm{--h:32px;--fs:13px;--gut:13px}.ds .b.lg{--h:48px;--fs:16px;--gut:22px}
+.ds .b.pri{--bg:var(--g-brand);--fg:var(--g-onbrand)}.ds .b.red{--bg:#E40028;--fg:#fff;--h:40px}
+.ds .b.soft{--bg:var(--g-soft)}.ds .b.soft:hover{--bg:var(--g-softh)}
+.ds .b[disabled]{opacity:.4;cursor:default;transform:none}
+.ds .b.blc{--h:32px;--fs:13px;--gut:13px;position:absolute}
+.ds .mb{background:var(--g-soft)}
+/* type: Fraunces headline with one italic phrase; label-mono; body-l */
+.ds .dsl{margin:0 0 12px;color:var(--ink-subtle)}
+.ds .h{font:400 56px/1.02 Fraunces,Georgia,serif;letter-spacing:-.01em;margin:0}.ds .h em{font-style:italic;font-weight:300}
+.ds .phone .h{font-size:40px}
+.ds .sub{font:400 18px/28px Manrope,sans-serif;color:var(--ink-muted);margin:14px 0 0}
+.ds .phone .sub{font-size:16px;line-height:24px}
+.ds .h2{font:400 26px/1.1 Fraunces,Georgia,serif;margin:10px 0 0}
+.ds .lm{font:500 11px/14px "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+/* fields: hairline borders, no shadows; DS focus ring */
+.ds .fl>span{font:500 11px/14px "DM Mono",monospace;letter-spacing:.08em;color:var(--ink-subtle);margin-bottom:8px}
+.ds .in2{box-shadow:none;border:1px solid var(--g-line);height:44px;background:#fff}
+.ds .in2:focus{box-shadow:none;outline:2px solid var(--g-ring);outline-offset:2px}
+.ds .ddx{background:var(--g-soft)}.ds .ddo .in2{border-right:0}
+.ds .step{box-shadow:none;border:1px solid var(--g-line)}
+.ds .file,.ds .mapp{box-shadow:none;border:1px solid var(--g-line)}
+.ds .drop{border:1px dashed var(--g-line);background:#fff}
+.ds .cal{box-shadow:none;border:1px solid var(--g-line)}
+.ds .frm{display:grid;gap:18px}
+.ds .sh{display:flex;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--hair);margin-top:6px}
+.ds .sh:first-child{margin-top:0}.ds .sh .lm{color:var(--ink-subtle)}.ds .sh b{font:600 14px/1 Manrope,sans-serif;color:var(--ink)}
+/* status badges: DS square badges with a dot */
+.ds .st{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 8px;font:700 11px/1 Manrope,sans-serif;letter-spacing:.04em;text-transform:uppercase;background:var(--g-ok);color:var(--g-okt)}
+.ds .st::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.ds .st.hold{background:var(--g-late);color:var(--g-latet)}
+/* BL result = hairline list, not a card */
+.ds .bls{background:none;box-shadow:none;padding:0;gap:0}
+.ds .bls>.gh,.ds .bls>.blh{padding-bottom:12px;border-bottom:1px solid var(--ink);font:500 11px/14px "DM Mono",monospace;letter-spacing:.08em;color:var(--ink)}
+.ds .blh .gh{border-bottom:0;padding:0}
+.ds .blm{padding:12px 0;font-size:14px}
+.ds .blr{padding:12px 0;border-top:0;border-bottom:1px solid var(--hair)}
+.ds .bls>.note{padding-top:12px}
+.ds .ghost{padding-top:14px}.ds .ghost .gp{box-shadow:none;border:1px solid var(--g-line)}
+.ds .rail{padding-top:8px}
+.ds.va .lap .dsw>.h,.ds.va .lap .dsw>.sub{margin-left:37px}
+.ds .who{display:grid;gap:18px;background:var(--g-soft);margin:6px -28px -28px;padding:24px 28px 28px}
+.ds.va .sh{border-bottom:0;padding-bottom:14px;background:radial-gradient(circle,#8a94a8 .9px,transparent 1.1px) 0 100%/6px 3px repeat-x;align-items:baseline;gap:14px}
+.ds.va .sh .lm{font:300 italic 34px/.8 Fraunces,Georgia,serif;letter-spacing:0;color:var(--ink);font-variation-settings:"opsz" 144}
+.ds.va .sh b{font-size:15px}
+.ds.va .sh{margin-top:20px}.ds.va .sh:first-child{margin-top:0}
+/* Variant A: Cut-corner frame, light version (cut 18, hairline 9px out, + ticks) */
+.ds .hud{--cut:18px;--gap:9px;position:relative;padding:var(--gap);isolation:isolate}
+.ds .hud::before,.ds .hud::after{content:"";position:absolute;z-index:-1;clip-path:polygon(var(--o) 0,100% 0,100% calc(100% - var(--o)),calc(100% - var(--o)) 100%,0 100%,0 var(--o))}
+.ds .hud::before{inset:0;background:var(--g-line);--o:calc(var(--cut) + var(--gap))}
+.ds .hud::after{inset:1px;background:var(--surface-ice);--o:calc(var(--cut) + var(--gap) - .41px)}
+.ds .hpanel{background:#fff;padding:28px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.ds .tick{position:absolute;width:17px;height:17px;background:linear-gradient(var(--g-line),var(--g-line)) center/1px 100% no-repeat,linear-gradient(var(--g-line),var(--g-line)) center/100% 1px no-repeat}
+.ds .tick.tr{top:-8px;right:-8px}.ds .tick.bl{bottom:-8px;left:-8px}
+/* Variant B: full-width bands */
+.ds .bhead{padding:56px 64px 40px;border-bottom:1px solid var(--hair)}
+.ds .bnd{display:grid;grid-template-columns:280px 1fr;gap:48px;padding:36px 64px;border-bottom:1px solid var(--hair)}
+.ds .bnd .br{display:grid;gap:18px;max-width:680px;align-content:start}
+.ds .bnd .sh{border-bottom:0;padding:0}
+.ds .bnd.ice{background:var(--surface-ice);border-bottom:0;padding-bottom:56px}
+.ds .sendrow{display:grid;gap:16px}
+.ds .phone .bhead{padding:32px 16px 28px}
+.ds .phone .bnd{grid-template-columns:1fr;gap:16px;padding:28px 16px}
+.ds .phone .bnd .h2{font-size:22px}
+.ds .phone .bnd.ice{padding-bottom:40px}
+.ds .seg{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--g-line);background:#fff;height:44px;max-width:360px}
+.ds .seg button{border:0;background:transparent;font:600 14px/1 Manrope,sans-serif;color:var(--ink-muted);cursor:pointer}
+.ds .seg button+button{border-left:1px solid var(--g-line)}
+.ds .seg button[aria-pressed="true"]{background:var(--g-brand);color:var(--g-onbrand)}
+.ds .seg button:focus-visible{outline:2px solid var(--g-ring);outline-offset:2px}
+.ds .m3.gen{grid-template-columns:1fr 1fr 124px}.ds .row2.gw{grid-template-columns:1fr 116px}
+.ds .m3.ph1{grid-template-columns:minmax(0,1fr) 84px auto;gap:8px}.ds .m3.ph1 .step{grid-template-columns:32px 36px 32px}
+/* D: WhatsApp message */
+.msg{background:#fff;padding:18px 20px;font:500 16px/25px Manrope;color:var(--ink);white-space:pre-line;position:relative;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
+.msgh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.num{font:500 15px "DM Mono",monospace}
+:root{--crimson:#970F27;--blush:#F5CEC8;--teal:#13F2A1;--lavender:#C6CAF4;--ice:#F7F8FB;--ink-muted:#33425E}
+.zpgw{max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));box-sizing:border-box}
+.zrv{background:var(--ice);border-bottom:1px solid var(--line)}
+.zrvi{display:flex;align-items:center;gap:18px;min-height:40px;flex-wrap:wrap;padding-block:6px}
+.zrv .zlb{font:500 11px/1.3 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-subtle)}
+.zrv .zrx{margin-left:auto}
+.zrv nav{display:flex;gap:4px;flex-wrap:wrap}
+.zrv nav a{font:600 13px/1 'Manrope',sans-serif;text-decoration:none;padding:7px 10px;color:var(--ink-subtle)}
+.zrv nav a[aria-current]{color:var(--ink);background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.zft{color:#fff}
+.zftf{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.zfh{background:var(--crimson)}.zfc{background:var(--navy)}
+.zfin{padding:64px max(24px,env(safe-area-inset-left,0px)) 64px 48px;box-sizing:border-box}
+.zfh .zfin{padding-left:max(48px,calc((100vw - 1200px)/2 + 24px))}
+.zfc .zfin{padding-right:max(24px,env(safe-area-inset-right,0px))}
+.zfl{height:64px;width:auto;display:block}.zfl2{height:58px;width:auto;display:block}
+.zfcols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:44px}
+.zfcols a{display:block;color:#fff;text-decoration:none;font-size:15px;line-height:1.4;padding:5px 0}
+.zfcols a:hover{text-decoration:underline;text-underline-offset:.25em}
+.zfk{margin:0 0 10px;font:500 12px/16px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.zfc p{margin:28px 0 0;font-size:22px;line-height:1.3;letter-spacing:-.01em;max-width:420px}
+.zfc p em{font:italic 300 26px/1.2 'Fraunces',Georgia,serif;color:var(--blush)}
+.zfc p.zfk{margin-top:28px;font-size:12px}
+.zstrip{display:grid;grid-template-columns:repeat(5,1fr);height:8px}
+.zstrip i:nth-child(1){background:var(--red)}.zstrip i:nth-child(2){background:var(--crimson)}.zstrip i:nth-child(3){background:var(--lavender)}.zstrip i:nth-child(4){background:var(--teal)}.zstrip i:nth-child(5){background:var(--blush)}
+@media (max-width:899px){.zftf{grid-template-columns:1fr}.zfin,.zfh .zfin{padding:48px max(24px,env(safe-area-inset-right,0px)) 48px max(24px,env(safe-area-inset-left,0px))}.zfcols{grid-template-columns:1fr 1fr}.zrv .zrx{display:none}}
+.zsnav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.zsnavi{display:flex;align-items:center;gap:28px;height:64px}
+.zslg img{height:36px;width:auto;display:block}
+.zsl{display:flex;align-items:center;gap:26px;margin-left:auto;font:600 15px/1 'Manrope',sans-serif}
+.zsl .znl{text-decoration:none;color:var(--ink)}.zsl .znl:hover,.zsl .znl[aria-current]{text-decoration:underline;text-underline-offset:.3em;text-decoration-thickness:1px}
+.zsl .zsep{width:1px;height:20px;background:var(--line)}
+.zsl .znd{position:relative;padding-block:22px}
+.zsl .zmn{display:none;position:absolute;top:100%;left:-14px;min-width:210px;padding:6px 0;background:#fff;border:1px solid var(--line)}
+.zsl .znd:hover .zmn,.zsl .znd:focus-within .zmn{display:block}
+.zsl .zmn a,.zmmp a{display:block;padding:9px 14px;font:500 14px/1.3 'Manrope',sans-serif;color:var(--ink);text-decoration:none;white-space:nowrap}
+.zsl .zmn a:hover,.zmmp a:hover{background:var(--ice)}.zsl .zmn a[aria-current],.zmmp a[aria-current]{font-weight:700;box-shadow:inset 2px 0 0 var(--ink)}
+.zsq{--h:40px;display:inline-flex;align-items:center;height:var(--h);padding:0 18px;background:var(--red);color:#fff;font:600 15px/1 'Manrope',sans-serif;text-decoration:none;white-space:nowrap;clip-path:polygon(calc(var(--h)*.27*.718) 0,100% 0,100% calc(100% - var(--h)*.27),calc(100% - var(--h)*.27*.718) 100%,0 100%,0 calc(var(--h)*.27))}
+.zmm{display:none;position:relative}.zmm summary{list-style:none;cursor:pointer;width:40px;height:40px;display:grid;place-items:center;background:var(--ice)}.zmm summary::-webkit-details-marker{display:none}
+.zmmp{position:absolute;right:0;top:48px;width:240px;background:#fff;border:1px solid var(--line);padding:10px 0 12px}.zmmp .zlbm{padding:10px 14px 4px}
+@media (max-width:899px){.zsl{display:none}.zmm{display:block}.zsq{margin-left:auto}.zsnavi{gap:12px;height:64px}.zslg img{height:34px}}
+.zlbm{font:500 12px/16px "DM Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#5F6B85;margin:0}
+.zsnav a{font-family:Manrope,sans-serif}.zft{margin-top:0}.zft a{color:#fff}
+.qreal{background:var(--surface-ice)}
+.qreal .qw{padding-block:24px 96px}
+.qreal .ui.lap,.qreal .ui.phone{width:auto;border-radius:0;background:none;padding:0}
+.qreal .lapscr,.qreal .screen{width:auto;min-height:0;border-radius:0;overflow:visible;background:none}
+.qreal .ui .snav,.qreal .island,.qreal .sbar{display:none}
+.qreal .ds.va .lap .dsw>.h,.qreal .ds.va .lap .dsw>.sub{margin-left:0}
+.qreal .lap .dsw{padding:40px 0 0!important}.qreal .phone .dsw{padding:24px 0 0!important}
+.qreal .ds.va .lapscr,.qreal .ds.va .screen{background:none}
+@media (max-width:899px){.qreal .qw{padding-block:8px 56px}}
+</style>
+
+<script>window.vxE=function(x){return String(x==null?"":x).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")};</script><style>
+.vx-w{max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));box-sizing:border-box}
+.vx-k{font:500 12px/16px 'DM Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#5F6B85;margin:0}
+.vx-ar{width:18px;height:18px;flex:none}
+.vx-cpy{width:32px;height:32px;display:inline-grid;place-items:center;border:0;background:none;color:inherit;opacity:.72;cursor:pointer;margin-left:2px;padding:0}.vx-cpy:hover{opacity:1}.vx-cpy.ok{opacity:1;color:#0E9F6E}
+.vx-s{background:#fff;padding-block:104px;color:#0C1931}
+.vx-s h2{font:400 44px/48px 'Fraunces',Georgia,serif;letter-spacing:-.01em;margin:12px 0 0}.vx-s h2 em,.vx-s h3 em,.vx-t h2 em{font-style:italic;font-weight:300}
+.vx-sg{display:grid;grid-template-columns:1fr 1fr;margin-top:40px;border-top:2px solid #0C1931}
+.vx-sc{padding:32px 48px 8px 0;min-width:0}.vx-sc+.vx-sc{padding:32px 0 8px 48px;border-left:1px solid #E7EAF0}
+.vx-sc h3{font:400 40px/1.1 'Fraunces',Georgia,serif;letter-spacing:-.01em;margin:10px 0 12px}
+.vx-bl{margin:0;max-width:480px;font-size:18px;line-height:28px;color:#33425E}
+.vx-sc dl{display:block;margin:20px 0;padding:0;border-top:1px solid #E7EAF0}.vx-sc dl div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #E7EAF0}.vx-sc dd{margin:0;font-size:15px;line-height:22px}
+.vx-lk{display:inline-flex;align-items:center;gap:8px;color:#0C1931;font:600 15px/1 'Manrope',sans-serif;text-decoration:none}.vx-lk:hover{text-decoration:underline;text-underline-offset:.25em}
+.vx-t{background:#F7F8FB;border-top:1px solid #E7EAF0;text-align:center;color:#0C1931}.vx-t .vx-w{padding-block:112px}
+.vx-t h2{font:400 56px/1.05 'Fraunces',Georgia,serif;letter-spacing:-.015em;margin:0 0 16px}
+.vx-t p{margin:0 auto;max-width:520px;font-size:18px;line-height:28px;color:#33425E}
+.vx-ta{margin-top:32px}
+.vx-bt{--h:48px;display:inline-flex;align-items:center;gap:8px;height:var(--h);padding:0 22px;background:#0C1931;color:#fff;font:600 16px/1 'Manrope',sans-serif;text-decoration:none;white-space:nowrap;clip-path:polygon(calc(var(--h)*.27*.718) 0,100% 0,100% calc(100% - var(--h)*.27),calc(100% - var(--h)*.27*.718) 100%,0 100%,0 calc(var(--h)*.27))}
+.vx-bt:hover{background:#18284A}
+.vx-t .vx-tm{margin-top:20px;max-width:none;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;font:500 15px/1.4 'Manrope',sans-serif}
+.vx-sep{width:1px;height:18px;background:#D9DEE8;margin:0 16px}
+.vx-f{background:#0C1931;color:#fff;font-family:'Manrope',sans-serif}.vx-f .vx-w{padding-block:72px 32px}
+.vx-f .vx-k{color:#F5CEC8;margin-bottom:10px}
+.vx-fg{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:48px;padding-bottom:48px}
+.vx-fl img{height:56px;width:auto;display:block}
+.vx-fn{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.vx-fn a{display:block;color:#fff;text-decoration:none;font-size:15px;line-height:30px}.vx-fn a:hover,.vx-lg a:hover{text-decoration:underline;text-underline-offset:.25em}
+.vx-fb{display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding-top:24px;border-top:1px solid rgba(255,255,255,.24)}
+.vx-cap{margin:0;font:400 18px/1.3 'Fraunces',Georgia,serif}.vx-cap em{font-style:italic}
+.vx-adr{margin:0;font:500 12px/16px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.vx-lg{margin-left:auto;display:flex;gap:20px}.vx-lg a{color:#fff;font-size:14px;text-decoration:none;opacity:.8}
+.vx-strip{display:grid;grid-template-columns:repeat(5,1fr);height:8px}.vx-strip i:nth-child(1){background:#E40028}.vx-strip i:nth-child(2){background:#970F27}.vx-strip i:nth-child(3){background:#C6CAF4}.vx-strip i:nth-child(4){background:#13F2A1}.vx-strip i:nth-child(5){background:#F5CEC8}
+.band.navy:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.vx-done{margin-top:16px;padding:16px 0;border-top:1px solid #E7EAF0;font-size:15px;line-height:22px;color:#33425E}.vx-done b{color:#0C1931}
+@media (max-width:899px){
+ .vx-s{padding-block:64px}.vx-s h2{font-size:34px;line-height:38px}
+ .vx-sg{grid-template-columns:1fr}.vx-sc,.vx-sc+.vx-sc{padding:28px 0 8px;border-left:0}.vx-sc+.vx-sc{border-top:1px solid #E7EAF0;margin-top:24px}.vx-sc h3{font-size:34px}
+ .vx-sc dl div{grid-template-columns:100px 1fr}
+ .vx-t .vx-w{padding-block:72px}.vx-t h2{font-size:38px}
+ .vx-fg{grid-template-columns:1fr;gap:36px}.vx-fn{grid-template-columns:1fr 1fr;gap:28px}.vx-lg{margin-left:0}
+}
+</style></head><body><header class="zsnav"><div class="zpgw zsnavi"><a href="index.html" class="zslg" aria-label="VirgoPoint Haulage, home"><img src="img/haulage-emblem-navy.svg" alt="VirgoPoint Haulage"></a><nav class="zsl" aria-label="Main"><span class="znd"><a class="znl" href="services-terminal.html">Services</a><span class="zmn"><a href="services-terminal.html">Terminal collection</a><a href="services-road.html">Road haulage</a></span></span><span class="znd"><a class="znl" href="track.html">Tracking</a><span class="zmn"><a href="track.html">Track a shipment</a><a href="proof-of-delivery.html">Proof of delivery</a><a href="watchtower.html">WatchTower</a></span></span><a class="znl" href="about.html">About</a><i class="zsep"></i><a class="znl" href="watchtower.html#sign-in">Log in</a></nav><a class="zsq" href="quote.html">Get a quote</a><details class="zmm"><summary aria-label="Menu"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 7H21M3 12H21M3 17H21" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"/></svg></summary><div class="zmmp"><p class="zlbm">Services</p><a href="services-terminal.html">Terminal collection</a><a href="services-road.html">Road haulage</a><p class="zlbm">Tracking</p><a href="track.html">Track a shipment</a><a href="proof-of-delivery.html">Proof of delivery</a><a href="watchtower.html">WatchTower</a><p class="zlbm">Company</p><a href="about.html">About</a><a href="watchtower.html#sign-in">Log in</a></div></details></div></header><main class="qreal"><div class="zpgw qw"><div class="in ds va" data-o="m" data-m="lap" data-v="a"></div></div></main><footer class="vx-f"><div class="vx-w"><div class="vx-fg"><a href="index.html" class="vx-fl"><img src="img/haulage-lockup-white.svg" alt="VirgoPoint Haulage"></a><nav class="vx-fn" aria-label="Site"><div><p class="vx-k">Services</p><a href="services-terminal.html">Terminal collection</a><a href="services-road.html">Road haulage</a></div><div><p class="vx-k">Tracking</p><a href="track.html">Track a shipment</a><a href="proof-of-delivery.html">Proof of delivery</a><a href="watchtower.html">WatchTower</a></div><div><p class="vx-k">Transporters</p><a href="carriers.html">Register as a transporter</a></div><div><p class="vx-k">Company</p><a href="about.html">About us</a><a href="quote.html">Get a quote</a><a href="watchtower.html#sign-in">Log in</a></div></nav></div><div class="vx-fb"><p class="vx-cap">VirgoPoint Haulage is <em>a VirgoPoint Capital company.</em></p><p class="vx-adr">40/41 Ibeshe Road, Ajose Bus Stop, Ikorodu, Lagos</p><nav class="vx-lg" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></div></div><div class="vx-strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></footer>
+<script>(function(){var q=matchMedia("(max-width:899px)");document.querySelector('.qreal .in').dataset.m=q.matches?"ph":"lap";})();</script><script>
+const PORTS=['Apapa','Tin Can','Lekki','Ikorodu'];
+const S={a:{port:'Apapa',size:'40 ft',n:2},b:{step:0,port:'Apapa',size:'40 ft',n:2,dest:'',when:''},c:{},d:{port:'Apapa',size:'40 ft',n:2,dest:'Ikeja',when:'Tue 1 Dec',name:'',co:''}};
+const logo='<img src="img/haulage-emblem-navy.svg" alt="VirgoPoint Haulage">';
+const MENU='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0C1931" stroke-width="1.75" stroke-linecap="square"><path d="M4 7H20M4 12H20M4 17H20"/></svg>';
+const nav=m=>m==='lap'?`<div class="snav">${logo}<div class="lk"><span>Services</span><span>Tracking</span><span>About</span><i></i><span>Log in</span><span class="b red">Get a quote</span></div></div>`
+ :`<div class="snav">${logo}<span class="sp"></span><span class="b red">Get a quote</span><span class="mb" aria-label="Menu">${MENU}</span></div>`;
+const frame=(m,inner)=>m==='lap'?`<div class="ui lap"><div class="lapscr">${nav(m)}${inner}</div></div>`
+ :`<div class="ui phone"><div class="screen"><div class="island"></div><div class="sbar"><span>13:35</span><span style="font-size:12px">▮▮▮</span></div>${nav(m)}${inner}</div></div>`;
+const head=(m,t,s)=>`<h1 class="h">${t}</h1>${s?`<p class="sub">${s}</p>`:''}`;
+const chips=(o,k,list,cur)=>`<div class="chips">${list.map(v=>`<button type="button" class="chip${v===cur?' on':''}" data-o="${o}" data-k="${k}" data-v="${v}">${v}</button>`).join('')}</div>`;
+const stepper=(o,n)=>`<div class="step"><button type="button" data-o="${o}" data-k="n" data-d="-1" aria-label="Fewer">–</button><b>${n}</b><button type="button" data-o="${o}" data-k="n" data-d="1" aria-label="More">+</button></div>`;
+const field=(l,ph,type)=>`<label class="fl"><span>${l}</span><input class="in2" ${type?`type="${type}"`:''} placeholder="${ph}"></label>`;
+const contact=m=>`${m==='lap'?`<div class="row2">${field('Your name','Name')}${field('Company','Company')}</div><div class="row2">${field('WhatsApp','+234','tel')}${field('Email','you@company.com','email')}</div>`
+ :`${field('Your name','Name')}${field('Company','Company')}${field('WhatsApp','+234','tel')}${field('Email','you@company.com','email')}`}`;
+
+/* ---------- A: one short form ---------- */
+function A(m){const s=S.a,lap=m==='lap';
+ const g1=`<div class="grp"><div class="gh">Your containers</div>
+  <div class="fl"><span>Pick up at</span>${chips('a','port',PORTS,s.port)}</div>
+  <div style="display:flex;gap:18px;flex-wrap:wrap"><div class="fl"><span>Size</span>${chips('a','size',['20 ft','40 ft'],s.size)}</div><div class="fl"><span>How many</span>${stepper('a',s.n)}</div></div>
+  ${field('Deliver to','Area or address, e.g. Ikeja')}
+  ${field('Ready from','e.g. Tue 1 Dec')}</div>`;
+ const g2=`<div class="grp"><div class="gh">How to reach you</div>${contact(m)}
+  <button type="button" class="b pri wide" data-send="a">Send request</button>
+  <p class="note" style="margin:0">We reply with a price by WhatsApp or email.</p></div>`;
+ const ok=`<div class="done" data-done="a"><b>Request sent.</b><p class="note" style="margin:6px 0 0">${s.n} × ${s.size} from ${s.port}. We reply with a price by WhatsApp or email.</p></div>`;
+ return frame(m,lap?`<div style="padding:56px 72px 64px">${head(m,'Get a quote','Tell us about your containers. We reply with a price.')}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px;align-items:start">${g1}<div style="display:grid;gap:16px">${g2}${ok}</div></div></div>`
+ :`<div style="padding:28px 16px 32px;display:grid;gap:20px">${head(m,'Get a quote','Tell us about your containers. We reply with a price.')}${g1}${g2}${ok}</div>`)}
+
+/* ---------- B: one question at a time ---------- */
+const BST=['Port','Containers','Delivery','Date','Contact'];
+function slant(W,cur){const g=4,sw=(W-g*4)/5,sk=5,y0=20,y1=28,fs=W<400?10.5:12;let o='';
+ BST.forEach((n,i)=>{const x=i*(sw+g),f=i<cur?'#0C1931':i===cur?'#2D3BE4':'#E4E8F0';
+  o+=`<polygon points="${x+sk},${y0} ${x+sw},${y0} ${x+sw-sk},${y1} ${x},${y1}" fill="${f}"/><text x="${x}" y="12" font-family="Manrope" font-weight="600" font-size="${fs}" fill="${i<=cur?'#0C1931':'#5F6B85'}">${n}</text>`});
+ return `<svg class="sl" viewBox="0 0 ${W} 30" width="${W}" height="30" role="img" aria-label="Step ${cur+1} of 5, ${BST[cur]}">${o}</svg>`}
+function Bq(m){const s=S.b,lap=m==='lap';
+ const q=[
+  ['Where do we collect?',`<div class="tiles">${PORTS.map(p=>`<button type="button" class="tile${p===s.port?' on':''}" data-o="b" data-k="port" data-v="${p}"><small>Port</small>${p}</button>`).join('')}</div>`],
+  ['What are we moving?',`<div class="fl"><span>Size</span>${chips('b','size',['20 ft','40 ft'],s.size)}</div><div class="fl" style="margin-top:16px"><span>How many</span>${stepper('b',s.n)}</div>`],
+  ['Where does it go?',`${field('Deliver to','Area or address, e.g. Ikeja')}<p class="note" style="margin:8px 0 0">A warehouse, a factory or a depot. Add the street if you have it.</p>`],
+  ['When is it ready?',`${field('Ready from','e.g. Tue 1 Dec')}<div style="margin-top:12px">${chips('b','when',['Already released','This week','Not sure yet'],s.when)}</div>`],
+  ['How do we reach you?',`<div style="display:grid;gap:14px">${contact(m)}</div>`]][s.step];
+ const last=s.step===4;
+ const inner=`${slant(lap?560:338,s.step)}<p class="lm" style="margin:28px 0 8px">Step ${s.step+1} of 5</p><h2 class="ql">${q[0]}</h2><div style="margin-top:20px">${q[1]}</div>
+  <div class="navrow" style="margin-top:28px">${s.step?`<button type="button" class="bk" data-bk="b">‹ Back</button>`:'<span></span>'}<button type="button" class="b pri" data-next="b">${last?'Send request':'Next'}</button></div>`;
+ return frame(m,lap?`<div style="display:grid;grid-template-columns:420px 1fr;min-height:696px">
+   <div style="padding:56px 48px 56px 72px;border-right:1px solid var(--line)">${head(m,'Get a quote','Five quick questions. We reply with a price.')}</div>
+   <div style="padding:56px 72px;max-width:704px">${inner}</div></div>`
+ :`<div style="padding:28px 16px 32px">${head(m,'Get a quote')}<div style="margin-top:24px">${inner}</div></div>`)}
+
+/* ---------- C: one sentence ---------- */
+const slotI=(w,ph)=>`<input class="slot" style="width:${Math.max(w,ph.length*.92+1.2)}ch" placeholder="${ph}" aria-label="${ph}">`;
+const slotS=(list,cur,lbl)=>`<select class="slot" aria-label="${lbl}">${list.map(v=>`<option${v===cur?' selected':''}>${v}</option>`).join('')}</select>`;
+function C(m){const lap=m==='lap';
+ const sen=`<p class="sen">Collect ${slotS(['1','2','3','4','5','6','8','10'],'2','How many')} × ${slotS(['20 ft','40 ft'],'40 ft','Size')} ${lap?'':'<br>'}from ${slotS(PORTS,'Apapa','Port')}, deliver to ${slotI(lap?9:7,'Ikeja')}, ready on ${slotI(lap?9:7,'Tue 1 Dec')}.</p>`;
+ const who=`<p class="sen" style="margin-top:${lap?8:4}px">I'm ${slotI(lap?8:7,'your name')} at ${slotI(lap?10:8,'company')}. Reply on ${slotI(lap?11:9,'WhatsApp no.')}${lap?' or ':'<br>or '}${slotI(lap?13:11,'email')}.</p>`;
+ const act=`<div style="display:flex;gap:16px;align-items:center;margin-top:28px;flex-wrap:wrap"><button type="button" class="b pri" data-send="c">Send request</button><span class="note">We reply with a price by WhatsApp or email.</span></div><div class="done" data-done="c" style="margin-top:16px"><b>Request sent.</b></div>`;
+ return frame(m,lap?`<div style="padding:72px 120px 80px"><p class="lm">Get a quote</p><div style="margin-top:20px;max-width:900px">${sen}${who}</div>${act}</div>`
+ :`<div style="padding:28px 16px 32px"><p class="lm">Get a quote</p><div style="margin-top:14px">${sen}${who}</div>${act}</div>`)}
+
+/* ---------- D: WhatsApp message ---------- */
+const WA='+234 909 667 3176';
+function msgText(){const s=S.d;return `Hello VirgoPoint Haulage,\nplease quote ${s.n} × ${s.size} from ${s.port} to ${s.dest||'…'}, ready ${s.when||'…'}.\n${s.name||'…'}${s.co?', '+s.co:''}`}
+function D(m){const s=S.d,lap=m==='lap';
+ const form=`<div class="grp"><div class="fl"><span>Pick up at</span>${chips('d','port',PORTS,s.port)}</div>
+  <div style="display:flex;gap:18px;flex-wrap:wrap"><div class="fl"><span>Size</span>${chips('d','size',['20 ft','40 ft'],s.size)}</div><div class="fl"><span>How many</span>${stepper('d',s.n)}</div></div>
+  <div class="row2"><label class="fl"><span>Deliver to</span><input class="in2" data-o="d" data-f="dest" value="${vxE(s.dest)}"></label><label class="fl"><span>Ready</span><input class="in2" data-o="d" data-f="when" value="${vxE(s.when)}"></label></div>
+  <div class="row2"><label class="fl"><span>Your name</span><input class="in2" data-o="d" data-f="name" placeholder="Name" value="${vxE(s.name)}"></label><label class="fl"><span>Company</span><input class="in2" data-o="d" data-f="co" placeholder="Company" value="${vxE(s.co)}"></label></div></div>`;
+ const prev=`<div><div class="msgh"><span class="lm">Your message</span><span class="num">${WA}</span></div><div class="msg" data-msg>${msgText()}</div>
+  <div style="display:grid;grid-template-columns:${lap?'1fr 1fr':'1fr'};gap:10px;margin-top:14px"><span class="b pri">Send on WhatsApp</span><span class="b soft">Send by email</span></div>
+  <p class="note" style="margin:10px 0 0">Opens WhatsApp or your email with the message ready. You press send.</p></div>`;
+ return frame(m,lap?`<div style="padding:56px 72px 64px">${head(m,'Get a quote','Fill in four things. We write the message, you send it.')}
+  <div style="display:grid;grid-template-columns:1fr 440px;gap:24px;margin-top:36px;align-items:start">${form}${prev}</div></div>`
+ :`<div style="padding:28px 16px 32px;display:grid;gap:20px">${head(m,'Get a quote','Fill in four things. We write the message, you send it.')}${form}${prev}</div>`)}
+
+
+/* ---------- Mix v2 (K 25 Nov 12:28): the form is the main way; WhatsApp and email are options.
+   Dropdowns with "Other" to save space. Phone: two steps, not five. ---------- */
+S.m={step:0,kind:'box',what:'',wt:'',port:'Apapa',size:'40 ft',n:2,when:'This week',dest:'',bl:'',chk:null,tdo:'',name:'',co:'',wa:'',em:'',sent:false};
+const MSTD=['Your containers','Your details'];
+function mslant(W,cur,L){const MST=L||MSTD;const g=4,sw=(W-g)/2,sk=5,y0=20,y1=28;let o='';
+ MST.forEach((n,i)=>{const x=i*(sw+g),f=i<cur?'#0C1931':i===cur?'#2D3BE4':'#E4E8F0';
+  o+=`<polygon points="${x+sk},${y0} ${x+sw},${y0} ${x+sw-sk},${y1} ${x},${y1}" fill="${f}"/><text x="${x}" y="12" font-family="Manrope" font-weight="600" font-size="12" fill="${i<=cur?'#0C1931':'#5F6B85'}">${n}</text>`});
+ return `<svg class="sl" viewBox="0 0 ${W} 30" width="${W}" height="30" role="img" aria-label="Step ${cur+1} of 2, ${MST[cur]}">${o}</svg>`}
+const mf=(l,f,ph,type)=>`<label class="fl"><span>${l}${typeof REQ!=='undefined'&&REQ.has(f)?STAR:''}</span><input class="in2" data-o="m" data-f="${f}" ${type?`type="${type}"`:''} placeholder="${ph}" value="${vxE(S.m[f])}"></label>`;
+/* dropdown with Other: picking Other shows a short text box in its place */
+const fb=f=>(S.m.fromBL||[]).includes(f)?'<i class="fbl">From BL</i>':'';
+const dd=(l,f,list,w)=>{const v=S.m[f];if(f==='when'&&(v==='Pick a date'||String(v).startsWith('date:')))return calField(l);const oth=!list.includes(v);
+ return `<label class="fl"${w?` style="min-width:${w}px"`:''}><span>${l}${REQ.has(f)?STAR:''}${fb(f)}</span>${oth?`<div class="ddo"><input class="in2" data-o="m" data-f="${f}" placeholder="Tell us" value="${vxE(v==='Other'?'':v)}" data-oth="1">${f==='port'?`<button type="button" class="ddx" data-mapopen="port" aria-label="Pick on map" title="Pick on map">${PIN}</button>`:''}<button type="button" class="ddx" data-ddreset="${f}" aria-label="Back to the list">×</button></div>`
+ :`<div class="dd"><select class="in2" data-o="m" data-f="${f}">${list.concat('Other').map(x=>`<option${x===v?' selected':''}>${x}</option>`).join('')}</select></div>`}</label>`};
+/* Ready: "Pick a date" turns the field into a date button with a month calendar under it (no past days) */
+const CALI='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M4 6H20V20H4ZM4 10H20M8 3V7M16 3V7"/></svg>';
+const CHV=d=>`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="${d<0?'M15 5L8 12L15 19':'M9 5L16 12L9 19'}"/></svg>`;
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const pretty=x=>{const [y,m,d]=x.split('-').map(Number);return new Date(y,m-1,d).toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'}).replace(',','')};
+const whenTxt=v=>String(v).startsWith('date:')?pretty(v.slice(5)):v;
+function calGrid(){const t=new Date();t.setHours(0,0,0,0);const b=new Date(t.getFullYear(),t.getMonth()+(S.m.calM||0),1);
+ const lead=(b.getDay()+6)%7,days=new Date(b.getFullYear(),b.getMonth()+1,0).getDate(),sel=String(S.m.when).slice(5);
+ let c='MTWTFSS'.split('').map(x=>`<span>${x}</span>`).join('')+'<i></i>'.repeat(lead);
+ for(let d=1;d<=days;d++){const x=new Date(b.getFullYear(),b.getMonth(),d),k=iso(x);c+=`<button type="button" data-calday="${k}"${x<t?' disabled':''} class="${k===sel?'on':''}${+x===+t?' td':''}" aria-label="${pretty(k)}">${d}</button>`}
+ return `<div class="cal"><div class="calh"><button type="button" data-calnav="-1" aria-label="Previous month"${(S.m.calM||0)<=0?' disabled':''}>${CHV(-1)}</button><b>${b.toLocaleDateString('en-GB',{month:'long',year:'numeric'})}</b><button type="button" data-calnav="1" aria-label="Next month">${CHV(1)}</button></div><div class="calg">${c}</div></div>`}
+function calField(l){const v=S.m.when,has=String(v).startsWith('date:');
+ return `<div class="fl calf"><span>${l}${STAR}</span><div class="ddo"><button type="button" class="in2 calb${has?'':' ph'}" data-calopen="1">${CALI}${has?pretty(v.slice(5)):'Pick a date'}</button><button type="button" class="ddx" data-ddreset="when" aria-label="Back to the list">×</button></div>${S.m.calOpen?calGrid():''}</div>`}
+const LISTS={port:PORTS,size:['20 ft','40 ft','45 ft'],when:['Today','Tomorrow','This week','Next week','Pick a date']};
+const mSend=()=>`<button type="button" class="b pri wide" data-msend="form">Send request</button>`;
+const STAR='<svg class="req" width="8" height="8" viewBox="0 0 10 10" role="img" aria-label="required"><title>Required</title><path d="M5 0L6.1 3.9L10 5L6.1 6.1L5 10L3.9 6.1L0 5L3.9 3.9Z" fill="#E40028"/></svg>';
+const REQ=new Set(['port','size','dest','when','name','wa','what']);
+const ICN={
+ cam:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M3 8H7.5L9 5.5H15L16.5 8H21V19H3Z"/><circle cx="12" cy="13" r="3.5"/></svg>',
+ up:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M12 16V4M7 9L12 4L17 9M4 15V20H20V15"/></svg>',
+ up24:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M12 16V4M7 9L12 4L17 9M4 15V20H20V15"/></svg>'};
+/* K 25 Nov 12:36: BL check runs on the EFL TOS + CMA APIs (status per BL). No charges or invoice fields: financials stay out.
+   Example data only; real lookups need the BL to belong to the person asking. */
+const dstr=d=>{const x=new Date();x.setDate(x.getDate()+d);return x.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'}).replace(',','')};
+const BLX=()=>({line:'CMA CGM',arr:dstr(-4),ctrs:[
+ {no:'CMAU 482193 0',sz:'40 ft HC',at:'Apapa, yard B4',st:'Released',ok:1},
+ {no:'CMAU 517026 4',sz:'40 ft HC',at:'Apapa, exam bay',st:'Held: customs exam',ok:0}]});
+const blRow=()=>`<div class="fl"><span>BL number</span><div class="blin"><input class="in2" data-o="m" data-f="bl" placeholder="From your bill of lading" value="${vxE(S.m.bl)}"><button type="button" class="b soft blc" data-blchk="1"${S.m.chk==='busy'?' disabled':''}>${S.m.chk==='busy'?'Checking':'Check'}</button></div></div>`;
+function blPanel(lap){const c=S.m.chk;
+ if(c!=='ok')return lap?`<div class="bls"><div class="gh">Your BL</div><div class="ghost"><i style="width:55%"></i>${[0,1].map(()=>`<div class="blr"><div style="display:grid;gap:6px;flex:1"><i style="width:48%"></i><i style="width:70%;height:8px"></i></div><span class="gp"></span></div>`).join('')}</div><p class="note" style="margin:0">${c==='busy'?'Checking your BL':'Check your BL number to see each container here: size, where it is in the yard, and if it is released or held. We fill in the form from it.'}</p></div>`:'';
+ const x=BLX();
+ return `<div class="bls"><div class="blh"><span class="gh" style="border:0;padding:0">BL ${S.m.bl||'—'}</span><span class="ex">Example</span></div>
+  <div class="blm">${x.line} · arrived ${x.arr}</div>
+  ${x.ctrs.map(k=>`<div class="blr"><div style="min-width:0"><b class="num">${k.no}</b><small>${k.sz} · ${k.at}</small></div><span class="st${k.ok?'':' hold'}">${k.st}</span></div>`).join('')}
+  <p class="note" style="margin:0">Pick up, size and number filled in from your BL.</p></div>`}
+const fsz=b=>b>1048576?(b/1048576).toFixed(1)+' MB':Math.max(1,Math.round(b/1024))+' KB';
+const fileCard=()=>{const f=S.m.tdo,ext=(f.name.split('.').pop()||'').slice(0,4).toUpperCase();
+ return `<div class="file"><span class="ft">${vxE(ext)}</span><div style="min-width:0"><b>${vxE(f.name)}</b><small>${fsz(f.size)}</small></div><button type="button" class="ddx" data-tdox="1" aria-label="Remove TDO" title="Remove TDO">×</button></div>`};
+/* laptop: a drop zone (drag a file or browse). phone: Snap opens the camera, Upload opens files */
+const tdoBox=lap=>`<div class="fl"><span>TDO</span>${S.m.tdo?fileCard()
+ :lap?`<label class="drop" data-drop="1"><span class="doc" aria-hidden="true"><i></i><i></i><i></i></span><span class="dt"><b>Add your TDO</b><small>Drop a PDF or photo here</small></span><span class="b soft sm">Browse</span><input type="file" accept="image/*,application/pdf" data-tdo="1" hidden></label>`
+ :`<div class="row2"><label class="b soft ico">${ICN.cam}Take photo<input type="file" accept="image/*" capture="environment" data-tdo="1" hidden></label><label class="b soft ico">${ICN.up}Choose file<input type="file" accept="image/*,application/pdf" data-tdo="1" hidden></label></div>`}</div>`;
+const PIN='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M12 21C12 21 5 14.5 5 9.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+const MPIN=(x,y)=>`<svg class="mpin" style="left:${x}%;top:${y}%" width="24" height="30" viewBox="0 0 24 30" aria-hidden="true"><path d="M12 29C12 29 2 18.5 2 11A10 10 0 0 1 22 11C22 18.5 12 29 12 29Z" fill="#0C1931" stroke="#fff" stroke-width="2"/><circle cx="12" cy="11" r="3.5" fill="#fff"/></svg>`;
+const mfPin=(l,f,ph)=>`<label class="fl"><span>${l}${REQ.has(f)?STAR:''}</span><div class="blin"><input class="in2" data-o="m" data-f="${f}" placeholder="${ph}" value="${vxE(S.m[f])}" style="padding-right:48px"><button type="button" class="b soft blc pinb" data-mapopen="${f}" aria-label="Pick on map" title="Pick on map">${PIN}</button></div></label>`;
+function mapPanel(f){const P=S.m.pins||{},open=S.m.mapOpen===f,pt=open?S.m.mapTmp:P[f];
+ if(!open&&!pt)return '';
+ const nm=f==='port'?'pick up':'delivery';
+ return `<div class="mapp"><div class="mapi${open?' live':''}"${open?` data-mapclick="${f}"`:''}>${pt?MPIN(pt.x,pt.y):''}</div>
+  <div class="mapbar">${open?`<span class="note">${pt?'Tap again to move the pin.':'Tap the map where we '+(f==='port'?'collect':'deliver')+'.'}</span><button type="button" class="b soft sm" data-mapx="1">Cancel</button><button type="button" class="b pri sm" data-mapuse="${f}"${pt?'':' disabled'}>Use this spot</button>`
+  :`<span class="note">${f==='port'?'Pick up':'Delivery'} pinned on the map.</span><button type="button" class="b soft sm" data-mapopen="${f}">Move</button><button type="button" class="ddx" data-mapdel="${f}" aria-label="Remove ${nm} pin" title="Remove pin" style="height:36px;width:36px">×</button>`}</div></div>`}
+const mBoxes=lap=>lap
+ ?`${blRow()}<div class="m3">${dd('Pick up at','port',LISTS.port)}${dd('Size','size',LISTS.size)}<div class="fl"><span>How many${STAR}${fb('n')}</span>${stepper('m',S.m.n)}</div></div>${mapPanel('port')}
+   <div class="row2">${mfPin('Deliver to','dest','Area or address, e.g. Ikeja')}${dd('When to load','when',LISTS.when)}</div>${mapPanel('dest')}${tdoBox(true)}`
+ :`${blRow()}${blPanel(false)}<div class="row2 ps">${dd('Pick up at','port',LISTS.port)}${dd('Size','size',LISTS.size)}</div>${mapPanel('port')}
+   <div class="row2" style="grid-template-columns:auto 1fr"><div class="fl"><span>How many${STAR}${fb('n')}</span>${stepper('m',S.m.n)}</div>${dd('When to load','when',LISTS.when)}</div>
+   ${mfPin('Deliver to','dest','Area or address, e.g. Ikeja')}${mapPanel('dest')}${tdoBox(false)}`;
+const mWho=lap=>lap?`<div class="row2">${mf('Your name','name','Name')}${mf('Company','co','Company')}</div><div class="row2">${mf('WhatsApp','wa','+234','tel')}${mf('Email','em','you@company.com','email')}</div>`
+ :`${mf('Your name','name','Name')}${mf('Company','co','Company')}${mf('WhatsApp','wa','+234','tel')}${mf('Email','em','you@company.com','email')}`;
+/* sent page: reference, the request as sent, download, and WhatsApp / email with the request written out */
+const MAIL='watch-tower@vpc.com.ng';
+const DL='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M12 4V16M7 11L12 16L17 11M4 15V20H20V15"/></svg>';
+function mSum(){const s=S.m,v=x=>x&&x!=='Other'?vxE(x):'—';
+ const rows=[['Pick up at',(s.pins&&s.pins.port)?v(s.port)+' (pinned)':v(s.port)],...(s.kind==='gen'?[['Cargo','General cargo'],['What is it',v(s.what)],['Weight',s.wt?vxE(s.wt)+' t':'—']]:[['Size',v(s.size)],['How many',s.n]]),['Deliver to',(s.pins&&s.pins.dest)?(s.dest?s.dest+' (pinned)':'Pinned on map'):v(s.dest)],['When to load',v(whenTxt(s.when))],['BL number',v(s.bl)],['TDO',s.tdo&&atPort()?vxE(s.tdo.name):'—'],['Name',v(s.name)],['Company',v(s.co)],['WhatsApp',v(s.wa)],['Email',v(s.em)]];
+ return `<div class="bls"><div class="gh">Your request</div><dl class="sum">${rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('')}</dl></div>`}
+const mReach=()=>`<div class="reach">
+ <div class="rr"><span class="lm">WhatsApp</span><b class="num">${WA}</b><button type="button" class="b soft sm" data-mshare="wa" title="Opens WhatsApp with your request written out">Send</button></div>
+ <div class="rr"><span class="lm">Email</span><b class="num">${MAIL}</b><button type="button" class="b soft sm" data-mshare="em" title="Opens your email with your request written out">Send</button></div></div>`;
+function mSent(lap){const s=S.m;
+ const top=`<p class="lm" style="margin:0 0 12px">Request ${s.ref}</p><h1 class="h">Request <em>sent.</em></h1><p class="sub">We reply with a price on WhatsApp or by email.</p>`;
+ const dl=`<button type="button" class="b soft ico${lap?'':' wide'}" data-mdl="1">${DL}Download PDF</button>`;
+ const edit=`<button type="button" class="bk" data-medit="1" style="justify-self:start">‹ Edit request</button>`;
+ if(lap)return `<div style="padding:48px 64px 64px"><div class="mgrid" style="margin-top:0"><div style="display:grid;gap:28px;align-content:start;padding-top:8px">
+  <div>${top}</div><div style="justify-self:start">${dl}</div><div><div class="gh" style="margin-bottom:4px">Send a copy, or talk to us</div>${mReach()}</div>${edit}</div>${mSum()}</div></div>`;
+ return `<div style="padding:28px 16px 32px;display:grid;gap:24px"><div>${top}</div>${dl}${mSum()}<div><div class="gh" style="margin-bottom:4px">Send a copy, or talk to us</div>${mReach()}</div>${edit}</div>`}
+function M(m){const s=S.m,lap=m==='lap';
+ if(s.sent)return frame(m,mSent(lap));
+ if(lap)return frame(m,`<div style="padding:48px 64px 64px">${head(m,'Get a quote','Tell us about your containers. We reply with a price.')}
+  <div class="mgrid"><div class="grp" style="gap:16px"><div class="gh">Your containers</div>${mBoxes(true)}<div class="gh" style="margin-top:8px">Your details</div>${mWho(true)}<div style="display:grid;gap:12px;margin-top:6px">${mSend()}</div></div>
+  <aside style="display:grid;gap:16px;align-content:start">${blPanel(true)}</aside></div></div>`);
+ const body=s.step===0?`<div style="display:grid;gap:16px">${mBoxes(false)}</div><div style="margin-top:24px"><button type="button" class="b pri wide" data-mnext="1">Next</button></div>`
+  :`<div style="display:grid;gap:16px">${mWho(false)}<div style="display:grid;gap:12px;margin-top:8px">${mSend()}</div><button type="button" class="bk" data-mbk="1" style="justify-self:start">‹ Back</button></div>`;
+ return frame(m,`<div style="padding:28px 16px 32px">${head(m,'Get a quote')}<div style="margin-top:24px">${mslant(338,s.step)}<div style="margin-top:24px">${body}</div></div></div>`)}
+
+/* ---------- DS variants (K 25 Nov 13:44 "improve with design system. 2 variants") ---------- */
+const dsHead=(lap,t1,t2,sub)=>`<h1 class="h">${t1} <em>${t2}</em></h1>${sub?`<p class="sub">${sub}</p>`:''}`;
+const SUBQ='Tell us about your shipment. We reply with a price.';
+const sh=(n,t)=>`<div class="sh"><span class="lm">${n}</span><b>${t}</b></div>`;
+const seg=()=>`<div class="seg" role="group" aria-label="What you are moving">${[['box','Container'],['gen','General cargo']].map(([k,l])=>`<button type="button" data-o="m" data-k="kind" data-v="${k}" aria-pressed="${S.m.kind===k}">${l}</button>`).join('')}</div>`;
+const pGen=lap=>lap?`<div class="m3 gen">${dd('Pick up at','port',LISTS.port)}${mf('What is it','what','e.g. 12 pallets of tiles')}${mf('Weight','wt','Tonnes')}</div>${mapPanel('port')}`
+ :`${dd('Pick up at','port',LISTS.port)}${mapPanel('port')}<div class="row2 gw">${mf('What is it','what','e.g. 12 pallets of tiles')}${mf('Weight','wt','Tonnes')}</div>`;
+const pCont=lap=>S.m.kind==='gen'?pGen(lap):lap?`<div class="m3">${dd('Pick up at','port',LISTS.port)}${dd('Size','size',LISTS.size)}<div class="fl"><span>How many${STAR}${fb('n')}</span>${stepper('m',S.m.n)}</div></div>${mapPanel('port')}`
+ :`<div class="m3 ph1">${dd('Pick up at','port',LISTS.port)}${dd('Size','size',LISTS.size)}<div class="fl"><span>How many${STAR}${fb('n')}</span>${stepper('m',S.m.n)}</div></div>${mapPanel('port')}`;
+/* K 25 Nov: TDO only when the pick-up is one of the listed ports (Other = address or pin, no terminal release) */
+const atPort=()=>PORTS.includes(S.m.port);
+const pWhere=lap=>lap?`<div class="row2">${mfPin('Deliver to','dest','Area or address, e.g. Ikeja')}${dd('When to load','when',LISTS.when)}</div>${mapPanel('dest')}${atPort()?tdoBox(true):''}`
+ :`${mfPin('Deliver to','dest','Area or address, e.g. Ikeja')}${mapPanel('dest')}${dd('When to load','when',LISTS.when)}${atPort()?tdoBox(false):''}`;
+const hud=inner=>`<div class="hud"><span class="tick tr"></span><span class="tick bl"></span><div class="hpanel">${inner}</div></div>`;
+function MA(m){const s=S.m,lap=m==='lap';
+ if(s.sent)return frame(m,mSent(lap));
+ if(lap)return frame(m,`<div class="dsw" style="padding:96px 64px 96px">${dsHead(true,'Get a','quote.',SUBQ)}
+  <div class="mgrid" style="margin-top:48px;grid-template-columns:${s.chk?'1fr 380px':'minmax(0,760px)'};gap:48px">${hud(`<div class="frm">${sh('01','Your cargo')}${seg()}${blRow()}${pCont(true)}${sh('02','Delivery')}${pWhere(true)}<div class="who">${sh('03','Your details')}${mWho(true)}<div style="margin-top:8px">${mSend()}</div></div></div>`)}
+  ${s.chk?`<aside class="rail">${blPanel(true)}</aside>`:''}</div></div>`);
+ const body=s.step===0?`<div class="frm">${seg()}${blRow()}${blPanel(false)}${pCont(false)}${pWhere(false)}<button type="button" class="b pri lg wide" data-mnext="1" style="margin-top:8px">Next</button></div>`
+  :`<div class="frm">${mWho(false)}<div style="margin-top:8px">${mSend()}</div><button type="button" class="bk" data-mbk="1" style="justify-self:start">‹ Back</button></div>`;
+ return frame(m,`<div class="dsw" style="padding:32px 16px 40px">${dsHead(false,'Get a','quote.')}<div style="margin-top:24px">${mslant(338,s.step,['Your cargo','Your details'])}<div style="margin-top:24px">${body}</div></div></div>`)}
+function MB(m){const s=S.m,lap=m==='lap';
+ if(s.sent)return frame(m,mSent(lap));
+ const band=(n,lab,h,inner,cls)=>`<section class="bnd${cls?' '+cls:''}"><div class="bl">${sh(n,lab)}${h?`<h2 class="h2">${h}</h2>`:''}</div><div class="br">${inner}</div></section>`;
+ const sendIn=`<div class="sendrow"><p class="sub" style="margin:0">We reply with a price on WhatsApp or by email.</p>${mSend()}</div>`;
+ return frame(m,`<div class="dsw">
+  <div class="bhead">${dsHead(lap,'Get a','quote.',SUBQ)}</div>
+  ${band('01','Your containers','Start with the BL.',`${blRow()}${blPanel(false)}${pCont(lap)}`)}
+  ${band('02','Delivery','Where, and from when.',pWhere(lap))}
+  ${band('03','Your details','How we reach you.',mWho(lap))}
+  ${band('04','Send','',sendIn,'ice')}
+ </div>`)}
+const R={a:A,b:Bq,c:C,d:D,m:(m,v)=>v==='a'?MA(m):v==='b'?MB(m):M(m)};
+function render(o){document.querySelectorAll(`.in[data-o="${o}"]`).forEach(el=>{el.innerHTML=R[o](el.dataset.m,el.dataset.v);if(el.classList.contains('ds'))el.querySelectorAll('.b').forEach(b=>{if(!b.querySelector(':scope>.f'))b.insertAdjacentHTML('afterbegin','<span class="f"></span>')})});fit()}
+function fit(){document.querySelectorAll('.fit').forEach(f=>{const w=+f.dataset.w,s=f.clientWidth/w,i=f.firstElementChild;i.style.width=w+'px';const h=i.offsetHeight;i.style.transform=`scale(${s})`;f.style.height=(h*s)+'px'})}
+['m','a','b','c','d'].forEach(render);addEventListener('resize',fit);document.fonts&&document.fonts.ready.then(fit);
+document.addEventListener('click',e=>{const mc=e.target.closest&&e.target.closest('[data-mapclick]');if(mc){const r=mc.getBoundingClientRect();S.m.mapTmp={x:Math.round((e.clientX-r.left)/r.width*1000)/10,y:Math.round((e.clientY-r.top)/r.height*1000)/10};render('m');return}
+const t=e.target.closest('button');if(!t)return;
+ if(t.dataset.k){const o=t.dataset.o,s=S[o];if(o==='m'&&s.fromBL)s.fromBL=s.fromBL.filter(x=>x!==(t.dataset.d?'n':t.dataset.k));if(t.dataset.d){s.n=Math.max(1,Math.min(20,s.n+ +t.dataset.d))}else{s[t.dataset.k]=t.dataset.v}render(o);return}
+ if(t.dataset.next){const s=S.b;if(s.step<4){s.step++;render('b')}else{t.textContent='Request sent';t.disabled=true}return}
+ if(t.dataset.mnext){S.m.step=Math.min(1,S.m.step+1);render('m');return}
+ if(t.dataset.mbk){S.m.step=Math.max(0,S.m.step-1);render('m');return}
+ if(t.dataset.msend){S.m.sent=true;S.m.ref=S.m.ref||'VPH-Q'+String(Math.floor(10000+Math.random()*89999));S.m.step=1;render('m');return}
+ if(t.dataset.medit){S.m.sent=false;render('m');return}
+ if(t.dataset.blchk){if(!S.m.bl.trim()){const x=document.querySelector(`.in[data-o="m"][data-m="${t.closest('.in').dataset.m}"] input[data-f="bl"]`);x&&x.focus();return}S.m.chk='busy';render('m');setTimeout(()=>{Object.assign(S.m,{chk:'ok',kind:'box',fromBL:['port','size','n'],port:'Apapa',size:'40 ft',n:2});render('m')},700);return}
+ if(t.dataset.tdox){S.m.tdo='';render('m');return}
+ if(t.dataset.mapopen){S.m.mapOpen=t.dataset.mapopen;S.m.mapTmp=(S.m.pins||{})[t.dataset.mapopen]||null;render('m');return}
+ if(t.dataset.mapx){S.m.mapOpen=null;render('m');return}
+ if(t.dataset.mapuse){S.m.pins=Object.assign({},S.m.pins,{[t.dataset.mapuse]:S.m.mapTmp});S.m.mapOpen=null;render('m');return}
+ if(t.dataset.mapdel){const p=Object.assign({},S.m.pins);delete p[t.dataset.mapdel];S.m.pins=p;render('m');return}
+ if(t.dataset.calopen){S.m.calOpen=!S.m.calOpen;render('m');return}
+ if(t.dataset.calnav){S.m.calM=Math.max(0,(S.m.calM||0)+ +t.dataset.calnav);render('m');return}
+ if(t.dataset.calday){S.m.when='date:'+t.dataset.calday;S.m.calOpen=false;render('m');return}
+ if(t.dataset.ddreset){S.m.calOpen=false;S.m[t.dataset.ddreset]=LISTS[t.dataset.ddreset][0];render('m');return}
+ if(t.dataset.bk){S.b.step=Math.max(0,S.b.step-1);render('b');return}
+ if(t.dataset.send){document.querySelectorAll(`[data-done="${t.dataset.send}"]`).forEach(d=>d.classList.add('on'));fit()}});
+document.addEventListener('change',e=>{const t=e.target;if(t.dataset&&t.dataset.tdo&&t.files&&t.files[0]){const f=t.files[0];S.m.tdo={name:f.name,size:f.size};render('m')}});
+['dragover','dragleave','drop'].forEach(ev=>document.addEventListener(ev,e=>{const z=e.target.closest&&e.target.closest('[data-drop]');if(!z)return;e.preventDefault();z.classList.toggle('on',ev==='dragover');if(ev==='drop'&&e.dataTransfer.files[0]){const f=e.dataTransfer.files[0];S.m.tdo={name:f.name,size:f.size};render('m')}}));
+document.addEventListener('input',e=>{const f=e.target.dataset&&e.target.dataset.f;if(!f)return;if(e.target.dataset.o==='m'){const v=e.target.value;if(S.m.fromBL)S.m.fromBL=S.m.fromBL.filter(x=>x!==f);S.m[f]=(e.target.dataset.oth&&v==='')?'Other':v;if(e.target.tagName==='SELECT'){if(v==='Pick a date'){S.m.calOpen=true;S.m.calM=0}render('m');if(v==='Other'){const x=document.querySelector(`.in[data-o="m"] input[data-f="${f}"]`);x&&x.focus()}}return}S.d[f]=e.target.value;document.querySelectorAll('[data-msg=""]').forEach(m=>m.textContent=msgText())});
+</script><script>(function(){var q=matchMedia("(max-width:899px)"),el=document.querySelector('.qreal .in');q.addEventListener("change",function(){el.dataset.m=q.matches?"ph":"lap";render("m");});})();</script><script>(function(){
+function txt(){var s=S.m,v=function(x){return x&&x!=='Other'?x:''};var L=['Quote request'];
+function add(k,x){if(x!==''&&x!=null)L.push(k+': '+x)}
+add('Pick up at',v(s.port));if(s.kind==='gen'){add('Cargo','General cargo');add('What is it',v(s.what));add('Weight',s.wt?s.wt+' t':'')}else{add('Size',v(s.size));add('How many',s.n)}
+add('Deliver to',v(s.dest));add('When to load',typeof whenTxt==='function'?v(whenTxt(s.when)):v(s.when));add('BL number',v(s.bl));
+if(s.tdo&&(typeof atPort!=='function'||atPort()))L.push('TDO: I will send it in this chat');add('Name',v(s.name));add('Company',v(s.co));add('WhatsApp',v(s.wa));add('Email',v(s.em));return L.join('\n')}
+window.mSent=function(lap){var top='<h1 class="h">Finish in <em>WhatsApp.</em></h1><p class="sub">We opened WhatsApp with your request written out. Press send there and we reply with a price.</p>';
+var edit='<button type="button" class="bk" data-medit="1" style="justify-self:start">‹ Edit request</button>';
+if(lap)return '<div style="padding:48px 64px 64px"><div class="mgrid" style="margin-top:0"><div style="display:grid;gap:28px;align-content:start;padding-top:8px"><div>'+top+'</div><div><div class="gh" style="margin-bottom:4px">WhatsApp did not open?</div>'+mReach()+'</div>'+edit+'</div>'+mSum()+'</div></div>';
+return '<div style="padding:28px 16px 32px;display:grid;gap:24px"><div>'+top+'</div>'+mSum()+'<div><div class="gh" style="margin-bottom:4px">WhatsApp did not open?</div>'+mReach()+'</div>'+edit+'</div>'};
+window.blPanel=function(){return ''};
+var STEP0=['port','size','what','dest','when'];function vxMissing(list){var s=S.m;return list.filter(function(f){if(f==='size'&&s.kind==='gen')return false;if(f==='what'&&s.kind!=='gen')return false;var x=s[f];if(f==='when'&&typeof whenTxt==='function'&&x)x=whenTxt(x);x=String(x==null?'':x).trim();if(!x||x==='Other'||x==='Pick a date')return true;if(f==='wa')return x.replace(/\D/g,'').length<7;return false})}
+var VXM=[];function vxMark(focus){var first=null;VXM.forEach(function(f){var els=document.querySelectorAll('.in[data-o="m"] [data-f="'+f+'"]');if(!els.length&&f==='when')els=document.querySelectorAll('.in[data-o="m"] [data-calopen]');els.forEach(function(el){el.classList.add('vx-miss');el.setAttribute('aria-invalid','true');if(!first&&el.offsetParent)first=el})});if(focus&&first){first.focus();first.scrollIntoView({block:'center'})}}
+var vxR=render;render=function(o){vxR(o);if(o==='m'&&VXM.length){VXM=vxMissing(VXM);vxMark(false)}};
+function vxCheck(list){var miss=vxMissing(list);VXM=miss;if(!miss.length)return true;var st=miss.some(function(f){return STEP0.indexOf(f)>-1})?0:1;if(S.m.step!==st){S.m.step=st;render('m')}vxMark(true);return false}
+document.addEventListener('input',function(e){if(e.target.classList&&e.target.classList.contains('vx-miss')){e.target.classList.remove('vx-miss');e.target.removeAttribute('aria-invalid');var f=e.target.getAttribute('data-f');VXM=VXM.filter(function(x){return x!==f})}},true);
+document.addEventListener('click',function(e){var t=e.target.closest('[data-msend],[data-mnext],[data-mshare],[data-blchk]');if(!t)return;
+if(t.dataset.mnext&&S.m.step===0){if(!vxCheck(STEP0)){e.stopImmediatePropagation();e.preventDefault()}return}
+if(t.dataset.blchk){e.stopImmediatePropagation();e.preventDefault();return}
+if(t.dataset.msend){if(!vxCheck(['port','size','what','dest','when','name','wa'])){e.stopImmediatePropagation();e.preventDefault();return}vxWA(txt());setTimeout(function(){scrollTo(0,0)},0);return}
+if(t.dataset.mshare==='wa'){e.stopImmediatePropagation();vxWA(txt());return}
+if(t.dataset.mshare==='em'){e.stopImmediatePropagation();location.href='mailto:watch-tower@vpc.com.ng?subject='+encodeURIComponent('Quote request')+'&body='+encodeURIComponent(txt());}},true);
+var st=document.createElement('style');st.textContent='.vx-miss{box-shadow:inset 0 0 0 2px #E40028!important}[data-blchk],[data-mdl],[data-mapopen]{display:none!important}.blin .in2{padding-right:14px!important}';document.head.appendChild(st);})();</script><script>(function(){var WAN="2349096673176";
+document.querySelectorAll('.vx-cpy').forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-c');function ok(){b.classList.add('ok');setTimeout(function(){b.classList.remove('ok')},1200)}
+function sel(){var s=b.previousElementSibling;if(!s)return;var r=document.createRange();r.selectNodeContents(s);var w=getSelection();w.removeAllRanges();w.addRange(r);}
+try{navigator.clipboard.writeText(v).then(ok,sel)}catch(e){sel()}})});
+window.vxWA=function(text){var u='https://wa.me/'+WAN+'?text='+encodeURIComponent(text);var w=window.open(u,'_blank');if(w){try{w.opener=null}catch(e){}}else{location.href=u;}};
+document.querySelectorAll('form[data-wa]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;
+var lines=[f.getAttribute('data-wa')];f.querySelectorAll('label').forEach(function(l){var i=l.querySelector('input:not([type=file]),select,textarea');var s=l.querySelector('span'),k=s?s.textContent:[].slice.call(l.childNodes).filter(function(n){return n.nodeType===3}).map(function(n){return n.textContent}).join(' ');if(i&&i.value.trim())lines.push((k.trim()||i.name)+': '+i.value.trim());});
+var chips=[].slice.call(f.querySelectorAll('.chip[aria-pressed="true"]')).map(function(c){return c.textContent});if(chips.length)lines.push('Containers: '+chips.join(', '));
+vxWA(lines.join('\n'));var o=f.querySelector('.ok2');if(o){o.hidden=false;}});});})();</script></body></html>
